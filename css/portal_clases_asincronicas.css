@@ -1,0 +1,87 @@
+body {
+  background: url('../img/background.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(0, 119, 182, 0.85);
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.logo {
+  height: 60px;
+  max-width: 160px;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+}
+
+.cerrar-sesion {
+  background: #001d3d;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px;
+}
+
+.clase-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #0077b6;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.clase-card h3 {
+  color: #005672;
+  margin-top: 0;
+}
+
+.iconos {
+  margin-top: 10px;
+}
+
+.iconos i {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #0077b6;
+  cursor: pointer;
+}
+
+.botones {
+  text-align: center;
+  margin: 20px;
+}
+
+.boton-mokup {
+  background: #0077b6;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

@@ -1,0 +1,119 @@
+body {
+  background: url('../img/background.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #a9dfbf;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img.logo {
+  height: 60px;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 24px;
+  color: #1e8449;
+}
+
+button.boton-mokup {
+  background: #000;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.table-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1e8449;
+}
+
+.tabla-cuadriculada {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.tabla-cuadriculada th,
+.tabla-cuadriculada td {
+  border: 2px solid #1e8449;
+  padding: 10px;
+  text-align: center;
+}
+
+.resumen {
+  margin-top: 20px;
+  font-weight: bold;
+  background-color: #eafaf1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+ul {
+  padding-left: 20px;
+  margin-top: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.perfil-estudiante {
+  background: white;
+  padding: 20px;
+  border: 2px solid #1e8449;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 250px;
+}
+
+.perfil-estudiante img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.icono-audio {
+  margin-top: 10px;
+  display: block;
+  color: #666;
+}
+
+.botones {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.boton-mokup {
+  background: #1e8449;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

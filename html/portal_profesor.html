@@ -1,46 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Profesor - Gestión de Cursos</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f0f4f8; margin: 0; padding: 0; }
-        header { background-color: #2c3e50; color: white; padding: 15px; text-align: center; }
-        section { background-color: white; margin: 20px auto; padding: 20px; max-width: 900px; box-shadow: 0 0 10px rgba(0,0,0,0.2); border-radius: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        table, th, td { border: 1px solid #ccc; }
-        th, td { padding: 10px; text-align: center; }
-        th { background-color: #2980b9; color: white; }
-        button { padding: 10px 20px; cursor: pointer; background-color: #2980b9; color: white; border: none; border-radius: 5px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal del Profesor</title>
+  <link rel="stylesheet" href="../css/portal_profesor.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <header>
-    <h1>Portal Profesor</h1>
+  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
+  <h1>Portal del Profesor</h1>
+  <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
+    <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+  </button>
 </header>
 
-<section>
-    <h2>Cursos Asignados</h2>
-    <table>
+<section class="contenedor">
+
+  <!-- Tabla de asignaturas -->
+  <div style="flex: 1 1 60%; min-width: 600px;">
+    <h2 class="table-title">Cursos Asignados</h2>
+    <div style="overflow-x: auto;">
+      <table class="tabla-cuadriculada">
         <thead>
-            <tr>
-                <th>Asignatura</th>
-                <th>Curso</th>
-                <th>Horario</th>
-                <th>Sala</th>
-            </tr>
+          <tr>
+            <th><i class="fa-solid fa-chevron-down"></i> Asignatura</th>
+            <th><i class="fa-solid fa-chevron-down"></i> Curso</th>
+            <th><i class="fa-solid fa-chevron-down"></i> Horario</th>
+            <th><i class="fa-solid fa-chevron-down"></i> Sala</th>
+          </tr>
         </thead>
         <tbody>
-            <tr><td>Matemáticas</td><td>4° Medio A</td><td>08:00 - 09:30</td><td>204</td></tr>
-            <tr><td>Física</td><td>3° Medio B</td><td>10:00 - 11:30</td><td>206</td></tr>
-            <tr><td>Química</td><td>2° Medio A</td><td>12:00 - 13:30</td><td>202</td></tr>
-            <tr><td>Ed. Física</td><td>1° Medio C</td><td>14:00 - 15:30</td><td>Patio</td></tr>
+          <tr><td>Lenguaje</td><td>4° Medio A</td><td>08:00 - 09:30</td><td>302</td></tr>
+          <tr><td>Lenguaje</td><td>4° Medio B</td><td>09:45 - 11:15</td><td>303</td></tr>
+          <tr><td>Lenguaje</td><td>3° Medio A</td><td>11:30 - 13:00</td><td>204</td></tr>
+          <tr><td>Lenguaje</td><td>3° Medio B</td><td>14:00 - 15:30</td><td>205</td></tr>
         </tbody>
-    </table>
+      </table>
+    </div>
 
-    <button onclick="alert('Registrando asistencia...')">Registrar Asistencia</button>
+    <div class="resumen">
+      <i class="fa-solid fa-volume-high"></i>
+      <i class="fa-solid fa-bell icono-campana"></i> Observaciones recientes
+    </div>
+    <ul>
+      <li>Acta reunión curso 4° B pendiente</li>
+      <li>Subida de calificaciones trimestre 1</li>
+      <li>Evaluaciones diagnósticas disponibles</li>
+    </ul>
+  </div>
+
+  <!-- Tarjeta del profesor -->
+  <div class="perfil-estudiante">
+    <img src="../img/estudiante.png" alt="Profesor">
+    <p><strong>MARÍA GODOY</strong></p>
+    <p>RUT: 12345678-9</p>
+    <p>Docente de Lenguaje</p>
+    <p><strong>Jornada: Mañana</strong></p>
+    <i class="fa-solid fa-volume-high icono-audio"></i>
+  </div>
+
+</section>
+
+<!-- Botonera inferior -->
+<section class="botones">
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Curso</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Horario</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Evaluaciones</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Informes</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Notas</a>
+</section>
+
+<section class="botones">
+  <a class="boton-mokup" href="#">
+    <i class="fa-solid fa-file-pdf"></i> Descargar Acta PDF <i class="fa-solid fa-volume-high"></i>
+  </a>
 </section>
 
 </body>

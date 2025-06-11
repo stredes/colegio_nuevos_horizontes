@@ -1,52 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial Académico del Estudiante</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #eef1f6; }
-        header { background-color: #34495e; color: white; padding: 15px; text-align: center; }
-        section { background-color: white; padding: 20px; margin: 20px auto; max-width: 900px; box-shadow: 0 0 10px rgba(0,0,0,0.2); border-radius: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        table, th, td { border: 1px solid #ccc; }
-        th, td { padding: 10px; text-align: center; }
-        th { background-color: #3498db; color: white; }
-        button { padding: 10px 20px; margin-top: 20px; cursor: pointer; background-color: #3498db; color: white; border: none; border-radius: 5px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial Académico - Estudiante</title>
+  <link rel="stylesheet" href="../css/portal_estudiante_style_fix.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <header>
-    <h1>Historial Académico del Estudiante</h1>
+  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo">
+  <h1>Historial académico</h1>
+  <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
+    <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+  </button>
 </header>
 
-<section>
-    <h2>Información del Estudiante</h2>
-    <p><strong>Nombre:</strong> Elma Romas</p>
-    <p><strong>RUT:</strong> 233555659-5</p>
-    <p><strong>Curso:</strong> 4° Medio A</p>
-
-    <h2>Calificaciones</h2>
-    <table>
+<section class="contenedor">
+  <!-- Tabla principal -->
+  <div style="flex: 1 1 60%; min-width: 600px;">
+    <h2 class="table-title">Asignaturas x semestre</h2>
+    <div style="overflow-x: auto;">
+      <table class="tabla-cuadriculada">
         <thead>
-            <tr>
-                <th>Asignatura</th>
-                <th>Semestre 1</th>
-                <th>Semestre 2</th>
-                <th>Promedio</th>
-            </tr>
+          <tr>
+            <th><i class="fa-solid fa-chevron-down"></i> asignaturas</th>
+            <th><i class="fa-solid fa-chevron-down"></i> semestre 1</th>
+            <th><i class="fa-solid fa-chevron-down"></i> semestre 2</th>
+            <th><i class="fa-solid fa-chevron-down"></i> promedio</th>
+          </tr>
         </thead>
         <tbody>
-            <tr><td>Matemáticas</td><td>4.0</td><td>5.0</td><td>4.9</td></tr>
-            <tr><td>Lenguaje</td><td>6.0</td><td>4.2</td><td>5.4</td></tr>
-            <tr><td>Inglés</td><td>5.0</td><td>4.0</td><td>4.8</td></tr>
-            <tr><td>Ed. Física</td><td>7.0</td><td>7.0</td><td>7.0</td></tr>
-            <tr><td>Religión</td><td>MB</td><td>MB</td><td>MB</td></tr>
+          <tr><td>Matemáticas</td><td>4</td><td>5</td><td>4.9</td></tr>
+          <tr><td>Lenguaje</td><td>6</td><td>4.2</td><td>5.4</td></tr>
+          <tr><td>Inglés</td><td>5</td><td>4</td><td>4.8</td></tr>
+          <tr><td>Ed Física</td><td>7</td><td>7</td><td>7</td></tr>
+          <tr><td>Religión</td><td>mb</td><td>mb</td><td>mb</td></tr>
         </tbody>
-    </table>
+      </table>
+    </div>
 
-    <button onclick="alert('Descargando reporte PDF...')">Descargar Reporte PDF</button>
+    <div class="resumen">
+      <i class="fa-solid fa-volume-high"></i>
+      <i class="fa-solid fa-bell icono-campana"></i> Resumen curso
+    </div>
+    <ul>
+      <li>solicitud de cambio DE SALA DE CURSO POR INUNDACIÓN</li>
+      <li>solicitud de renovación TNE</li>
+      <li>FOTOGRAFÍAS ANUARIO 02/06/2026</li>
+    </ul>
+  </div>
+
+  <!-- Tarjeta estudiante -->
+  <div class="perfil-estudiante">
+    <img src="../img/estudiante.png" alt="Estudiante">
+    <p><strong>ELMA ROMAS</strong></p>
+    <p>233555659-5</p>
+    <p>Estudiante</p>
+    <p><strong>Curso: 4MEDIO A</strong></p>
+    <i class="fa-solid fa-volume-high icono-audio"></i>
+  </div>
+</section>
+
+<!-- Botonera inferior -->
+<section class="botones">
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Asignatura</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Alumno</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Semestre 1</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Semestre 2</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Promedio</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Notificaciones</a>
+</section>
+
+<section class="botones">
+  <a class="boton-mokup" href="#">
+    <i class="fa-solid fa-file-pdf"></i> Generar reporte PDF <i class="fa-solid fa-volume-high"></i>
+  </a>
 </section>
 
 </body>

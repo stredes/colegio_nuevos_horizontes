@@ -1,0 +1,64 @@
+body {
+  background: url('../img/background.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ffd500;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img.logo {
+  height: 60px;
+}
+
+header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 24px;
+  color: #000;
+}
+
+.tabla-cuadriculada {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.tabla-cuadriculada th,
+.tabla-cuadriculada td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.perfil-estudiante {
+  background: white;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 250px;
+}
+
+.perfil-estudiante img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.boton-mokup {
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+}

@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Clases Asincrónicas</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f9fafc; margin: 0; padding: 0; }
-        header { background-color: #2e86c1; color: white; padding: 15px; text-align: center; }
-        section { padding: 20px; max-width: 1000px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .clase { border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin-bottom: 15px; background-color: #fefefe; }
-        .clase h3 { margin-top: 0; }
-        .clase p { margin: 5px 0; }
-        .clase button { padding: 8px 16px; background-color: #2e86c1; color: white; border: none; border-radius: 4px; cursor: pointer; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clases Asincrónicas</title>
+  <link rel="stylesheet" href="../css/portal_clases_asincronicas.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
 <header>
-    <h1>Clases Asincrónicas Disponibles</h1>
+  <img src="../img/logo.png" alt="Logo Colegio" class="logo">
+  <h1>Clases Asincrónicas</h1>
+  <button class="boton-mokup cerrar-sesion">
+    <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+  </button>
 </header>
 
-<section>
-    <div class="clase">
-        <h3>Clase 1: Álgebra - Ecuaciones Lineales</h3>
-        <p><strong>Asignatura:</strong> Matemáticas</p>
-        <p><strong>Publicado el:</strong> 01/06/2025</p>
-        <button onclick="alert('Accediendo a clase 1')">Ver Clase</button>
+<section class="contenedor">
+  <div class="clase-card">
+    <h3>Lenguaje</h3>
+    <p><strong>Fecha:</strong> 10/06/2025</p>
+    <p><strong>Material:</strong> Guía + Video</p>
+    <div class="iconos">
+      <i class="fa-solid fa-file-pdf"></i>
+      <i class="fa-solid fa-video"></i>
+      <i class="fa-solid fa-volume-high"></i>
     </div>
+  </div>
 
-    <div class="clase">
-        <h3>Clase 2: Comprensión Lectora - Texto Argumentativo</h3>
-        <p><strong>Asignatura:</strong> Lenguaje</p>
-        <p><strong>Publicado el:</strong> 02/06/2025</p>
-        <button onclick="alert('Accediendo a clase 2')">Ver Clase</button>
+  <div class="clase-card">
+    <h3>Matemáticas</h3>
+    <p><strong>Fecha:</strong> 09/06/2025</p>
+    <p><strong>Material:</strong> Ecuaciones</p>
+    <div class="iconos">
+      <i class="fa-solid fa-file-pdf"></i>
+      <i class="fa-solid fa-video"></i>
+      <i class="fa-solid fa-volume-high"></i>
     </div>
+  </div>
 
-    <div class="clase">
-        <h3>Clase 3: Ciencias Naturales - Sistema Respiratorio</h3>
-        <p><strong>Asignatura:</strong> Ciencias</p>
-        <p><strong>Publicado el:</strong> 03/06/2025</p>
-        <button onclick="alert('Accediendo a clase 3')">Ver Clase</button>
+  <div class="clase-card">
+    <h3>Biología</h3>
+    <p><strong>Fecha:</strong> 08/06/2025</p>
+    <p><strong>Material:</strong> Documental + Guía</p>
+    <div class="iconos">
+      <i class="fa-solid fa-file-pdf"></i>
+      <i class="fa-solid fa-video"></i>
+      <i class="fa-solid fa-volume-high"></i>
     </div>
+  </div>
+</section>
+
+<section class="botones">
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-circle-down"></i> Descargar Todo</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-arrow-rotate-left"></i> Actualizar</a>
 </section>
 
 </body>
