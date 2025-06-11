@@ -1,0 +1,57 @@
+# Colegio Nuevos Horizontes - Sistema de Gestión Escolar
+
+Este proyecto corresponde al desarrollo de una maqueta web para el sistema de gestión escolar del **Colegio Nuevos Horizontes**. Incluye múltiples vistas HTML representando los portales de distintos tipos de usuario.
+
+## 📁 Estructura del Proyecto
+```
+Colegio_Nuevos_Horizontes/
+├── html/
+│   ├── inicio_sesion.html
+│   ├── portal_estudiante.html
+│   ├── portal_profesor.html
+│   ├── portal_apoderado.html
+│   ├── portal_apoderado_ext.html
+│   └── clases_asincronicas.html
+├── css/
+│   └── estilos.css (si aplica)
+├── js/
+│   └── scripts.js (si aplica)
+├── img/
+│   └── (imágenes de soporte si se usan)
+└── index.html (menú de navegación para testing)
+```
+
+## 🧪 Navegación de Prueba
+Para probar cada vista, abre el archivo `index.html` en tu navegador. Este archivo sirve como menú principal con enlaces a todos los portales disponibles.
+
+## 📄 Portales Disponibles
+- 🟦 **Inicio de Sesión** (`inicio_sesion.html`)
+- 🧑‍🎓 **Portal Estudiante - Historial Académico** (`portal_estudiante.html`)
+- 👨‍🏫 **Portal Profesor** (`portal_profesor.html`)
+- 👨‍👧 **Portal Apoderado** (`portal_apoderado.html`)
+- 👪 **Portal Apoderado Extensivo** (`portal_apoderado_ext.html`)
+- 🖥️ **Portal Clases Asincrónicas** (`clases_asincronicas.html`)
+
+## 🛠️ Requisitos para Desarrollo
+- Navegador moderno (Chrome, Firefox, Edge)
+- Editor de código como VS Code
+- (Opcional) Servidor local como Live Server o Python SimpleHTTPServer
+
+## 🚀 Cómo iniciar
+```bash
+# Clona el repositorio
+https://github.com/stredes/colegio_nuevos_horizontes.git
+
+# Abre index.html en el navegador
+xdg-open index.html  # Linux
+start index.html      # Windows
+open index.html       # macOS
+```
+
+## ✏️ Autor
+- **stredes**  
+[Repositorio en GitHub](https://github.com/stredes/colegio_nuevos_horizontes)
+
+## 📌 Estado
+✅ Listo para pruebas visuales. 
+🚧 Próxima fase: integración con backend y autenticación real.
