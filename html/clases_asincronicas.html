@@ -2,64 +2,86 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clases Asincrónicas</title>
-  <link rel="stylesheet" href="../css/portal_clases_asincronicas.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../css/clases_asincronicas.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
 <header>
-  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
+  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
   <h1>Clases Asincrónicas</h1>
-  <button class="boton-mokup cerrar-sesion">
+
+  <!-- Íconos adicionales -->
+  <div style="position:absolute; top:20px; right:200px;">
+    <i class="fa-solid fa-print" title="Imprimir"></i>
+    <i class="fa-solid fa-magnifying-glass" title="Buscar"></i>
+    <i class="fa-solid fa-house" title="Inicio"></i>
+    <i class="fa-solid fa-gear" title="Configuración"></i>
+  </div>
+
+  <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
   </button>
 </header>
 
-<section class="contenedor">
-  <div class="clase-card">
-    <h3>Lenguaje</h3>
-    <p><strong>Fecha:</strong> 10/06/2025</p>
-    <p><strong>Material:</strong> Guía + Video</p>
-    <div class="iconos">
-      <i class="fa-solid fa-file-pdf" title="Descargar guía PDF"></i>
-      <i class="fa-solid fa-video" title="Ver clase en video"></i>
-      <button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high" title="Escuchar audio de clase"></i></button>
-    </div>
-  </div>
+<section class="contenedor" style="display: flex; gap: 30px; padding: 20px;">
+  <!-- Filtros -->
+  <aside class="filtros" style="width: 250px;">
+    <h3><i class="fa-solid fa-volume-high"></i> Filtros</h3>
+    <label>Asignatura:
+      <select>
+        <option>Biología</option>
+        <option>Lenguaje</option>
+        <option>Matemáticas</option>
+      </select>
+    </label>
+    <label>Experiencia:
+      <select>
+        <option>Exp1</option>
+        <option>Exp2</option>
+      </select>
+    </label>
+    <label>Año:
+      <select>
+        <option>2025</option>
+        <option>2024</option>
+      </select>
+    </label>
+    <label>Semestre:
+      <select>
+        <option>1° Semestre</option>
+        <option>2° Semestre</option>
+      </select>
+    </label>
+  </aside>
 
-  <div class="clase-card">
-    <h3>Matemáticas</h3>
-    <p><strong>Fecha:</strong> 09/06/2025</p>
-    <p><strong>Material:</strong> Ecuaciones</p>
-    <div class="iconos">
-      <i class="fa-solid fa-file-pdf" title="Descargar guía PDF"></i>
-      <i class="fa-solid fa-video" title="Ver clase en video"></i>
-      <button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high" title="Escuchar audio de clase"></i></button>
+  <!-- Reproductor y lista de videos -->
+  <main style="flex: 1;">
+    <h2><i class="fa-solid fa-volume-high"></i> Reproductor de Clase</h2>
+    <div class="video-player" style="border: 2px solid #ccc; padding: 10px;">
+      <video controls width="100%">
+        <source src="../media/clase_biologia.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <div class="controles" style="margin-top: 10px;">
+        <button><i class="fa-solid fa-backward-step"></i> Video anterior</button>
+        <button><i class="fa-solid fa-forward-step"></i> Siguiente video</button>
+      </div>
     </div>
-  </div>
 
-  <div class="clase-card">
-    <h3>Biología</h3>
-    <p><strong>Fecha:</strong> 08/06/2025</p>
-    <p><strong>Material:</strong> Documental + Guía</p>
-    <div class="iconos">
-      <i class="fa-solid fa-file-pdf" title="Descargar guía PDF"></i>
-      <i class="fa-solid fa-video" title="Ver clase en video"></i>
-      <button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high" title="Escuchar audio de clase"></i></button>
-    </div>
-  </div>
+    <!-- Lista de videos relacionados -->
+    <section class="lista-videos" style="margin-top: 30px;">
+      <h3><i class="fa-solid fa-volume-high"></i> Más clases</h3>
+      <ul>
+        <li><i class="fa-solid fa-circle-play"></i> Biología - Células</li>
+        <li><i class="fa-solid fa-circle-play"></i> Biología - ADN</li>
+        <li><i class="fa-solid fa-circle-play"></i> Biología - Bacterias</li>
+      </ul>
+    </section>
+  </main>
 </section>
-
-<section class="botones">
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-circle-down"></i> Descargar Todo</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-arrow-rotate-left"></i> Actualizar</a>
-</section>
-
-<!-- Scripts funcionales -->
-<script src="../js/clases_asincronicas.js"></script>
-<script src="../js/navigation.js"></script>
 
 </body>
 </html>

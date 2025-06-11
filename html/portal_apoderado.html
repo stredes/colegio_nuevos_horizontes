@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal del Apoderado</title>
   <link rel="stylesheet" href="../css/portal_apoderado.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -10,35 +10,77 @@
 <body>
 
 <header>
-  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
+  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
   <h1>Portal del Apoderado</h1>
-  <button class="boton-mokup cerrar-sesion">
+
+  <!-- Íconos de cabecera -->
+  <div style="position:absolute; top:20px; right:200px;">
+    <i class="fa-solid fa-print" title="Imprimir"></i>
+    <i class="fa-solid fa-magnifying-glass" title="Buscar"></i>
+    <i class="fa-solid fa-house" title="Inicio"></i>
+    <i class="fa-solid fa-gear" title="Configuración"></i>
+  </div>
+
+  <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
   </button>
 </header>
 
-<section class="contenedor">
-  <div class="tarjeta-apoderado">
-    <h2>Resumen del Alumno</h2>
-    <p><strong>Nombre:</strong> Elma Romas</p>
+<section class="contenedor" style="display: flex; gap: 20px;">
+  <!-- Información del alumno -->
+  <div class="info-alumno">
+    <h2><i class="fa-solid fa-volume-high"></i> Resumen del Alumno</h2>
+    <p><strong>Nombre:</strong> ELMA ROMAS</p>
     <p><strong>Curso:</strong> 4° Medio A</p>
-    <p><strong>RUT:</strong> 233555659-5</p>
+    <p><strong>RUT:</strong> 23.355.565-9</p>
     <p><strong>Estado:</strong> Regular</p>
+    <p><strong>Promedio:</strong> 5.9</p>
   </div>
 
-  <div class="tarjeta-apoderado">
-    <h2>Notificaciones</h2>
+  <!-- Perfil del apoderado (usa imagen del estudiante) -->
+  <div class="perfil-apoderado">
+    <img src="../img/estudiante.png" alt="Apoderado" />
+    <p><strong>María Riquelme</strong></p>
+    <p>Apoderado de: ELMA ROMAS</p>
+    <p>Relación: Madre</p>
+    <button class="boton-audio" title="Audio apoderado">
+      <i class="fa-solid fa-volume-high"></i>
+    </button>
+  </div>
+</section>
+
+<!-- Paneles informativos -->
+<section class="paneles">
+  <div class="panel-info">
+    <h3><i class="fa-solid fa-volume-high"></i> Información</h3>
     <ul>
-      <li>📝 Certificado de alumno regular disponible</li>
-      <li>📢 Reunión de apoderados el 14/06 a las 18:00 hrs</li>
-      <li>📬 Entrega de notas semestrales habilitada</li>
+      <li>Certificado de alumno regular disponible</li>
+      <li>Inscripción de Talleres ABIERTA</li>
+    </ul>
+  </div>
+
+  <div class="panel-pendientes">
+    <h3><i class="fa-solid fa-volume-high"></i> Pendientes</h3>
+    <ul>
+      <li>Reunión de apoderados 14/06/2024</li>
+      <li>Entrega de notas semestrales habilitada</li>
+    </ul>
+  </div>
+
+  <div class="panel-avisos">
+    <h3><i class="fa-solid fa-volume-high"></i> Avisos</h3>
+    <ul>
+      <li>Inicio de vacaciones: 30/06</li>
+      <li>Salida pedagógica cancelada por clima</li>
     </ul>
   </div>
 </section>
 
-<!-- Scripts funcionales -->
-<script src="../js/portal_apoderado.js"></script>
-<script src="../js/navigation.js"></script>
+<!-- Botones de acción -->
+<section class="acciones" style="margin-top: 30px;">
+  <button class="boton-mokup"><i class="fa-solid fa-user-clock"></i> Solicitar hora con profesor jefe</button>
+  <button class="boton-mokup"><i class="fa-solid fa-file-lines"></i> Solicitar certificados</button>
+</section>
 
 </body>
 </html>

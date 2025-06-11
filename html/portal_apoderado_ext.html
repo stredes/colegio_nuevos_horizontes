@@ -2,44 +2,86 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vista Extendida - Apoderado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Apoderado - Vista Extendida</title>
   <link rel="stylesheet" href="../css/portal_apoderado_ext.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
 <header>
-  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
+  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
   <h1>Vista Extendida del Apoderado</h1>
-  <button class="boton-mokup cerrar-sesion">
+
+  <div style="position:absolute; top:20px; right:200px;">
+    <i class="fa-solid fa-print" title="Imprimir"></i>
+    <i class="fa-solid fa-magnifying-glass" title="Buscar"></i>
+    <i class="fa-solid fa-house" title="Inicio"></i>
+    <i class="fa-solid fa-gear" title="Configuración"></i>
+  </div>
+
+  <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
   </button>
 </header>
 
-<section class="contenedor">
-  <div class="panel-ext">
-    <h2>Asistencia</h2>
-    <ul>
-      <li>📅 05/06 - Presente</li>
-      <li>📅 06/06 - Presente</li>
-      <li>📅 07/06 - Justificado</li>
-    </ul>
+<section class="contenedor" style="display: flex; gap: 20px;">
+  <!-- Imagen del estudiante -->
+  <div class="perfil-estudiante">
+    <img src="../img/estudiante.png" alt="Estudiante" />
+    <p><strong>ELMA ROMAS</strong></p>
+    <p>Curso: 4° Medio A</p>
+    <p>Promedio general: 5.9</p>
+    <button class="boton-audio" title="Escuchar contenido">
+      <i class="fa-solid fa-volume-high"></i>
+    </button>
   </div>
 
-  <div class="panel-ext">
-    <h2>Historial Académico</h2>
+  <!-- Panel de notas -->
+  <div class="panel-notas" style="flex: 1;">
+    <h2><i class="fa-solid fa-volume-high"></i> Historial Académico</h2>
+    <table class="tabla-cuadriculada">
+      <thead>
+        <tr>
+          <th>Asignatura</th>
+          <th>Nota</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Matemáticas</td><td>5.4</td></tr>
+        <tr><td>Lenguaje</td><td>6.9</td></tr>
+        <tr><td>Ciencias</td><td>5.1</td></tr>
+        <tr><td>Historia</td><td>6.2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Panel de asistencia -->
+  <div class="panel-asistencia">
+    <h2><i class="fa-solid fa-volume-high"></i> Historial Asistencias</h2>
     <ul>
-      <li>🧮 Matemáticas: 5.4</li>
-      <li>📘 Lenguaje: 5.9</li>
-      <li>🔬 Ciencias: 6.1</li>
+      <li>01/06 - Presente</li>
+      <li>02/06 - Inasistencia</li>
+      <li>03/06 - Presente</li>
+      <li>04/06 - Presente</li>
+      <li>05/06 - Presente</li>
     </ul>
+
+    <!-- Indicador circular ficticio (puede ser mejorado con CSS) -->
+    <div class="indicador-asistencia" style="margin-top: 15px;">
+      <p>Asistencia: 80%</p>
+      <p>Inasistencia: 20%</p>
+    </div>
   </div>
 </section>
 
-<!-- Scripts funcionales -->
-<script src="../js/portal_apoderado_ext.js"></script>
-<script src="../js/navigation.js"></script>
+<!-- Botón de filtros -->
+<section class="acciones" style="margin-top: 30px; text-align: center;">
+  <button class="boton-mokup">
+    <i class="fa-solid fa-sliders"></i> Filtros
+    <i class="fa-solid fa-volume-high"></i>
+  </button>
+</section>
 
 </body>
 </html>

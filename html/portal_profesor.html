@@ -5,78 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal del Profesor</title>
   <link rel="stylesheet" href="../css/portal_profesor.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
 <header>
   <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
   <h1>Portal del Profesor</h1>
+
+  <!-- Íconos adicionales en la cabecera -->
+  <div style="position:absolute; top:20px; right:200px;">
+    <i class="fa-solid fa-print" title="Imprimir"></i>
+    <i class="fa-solid fa-magnifying-glass" title="Buscar"></i>
+    <i class="fa-solid fa-house" title="Inicio"></i>
+    <i class="fa-solid fa-gear" title="Configuración"></i>
+  </div>
+
   <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
   </button>
 </header>
 
-<section class="contenedor">
-
+<section class="contenedor" style="display: flex; gap: 20px;">
   <!-- Tabla de asignaturas -->
   <div style="flex: 1 1 60%; min-width: 600px;">
-    <h2 class="table-title">Cursos Asignados</h2>
+    <h2 class="table-title">Asignaturas</h2>
     <div style="overflow-x: auto;">
       <table class="tabla-cuadriculada">
         <thead>
           <tr>
-            <th><i class="fa-solid fa-chevron-down"></i> Asignatura</th>
-            <th><i class="fa-solid fa-chevron-down"></i> Curso</th>
-            <th><i class="fa-solid fa-chevron-down"></i> Horario</th>
-            <th><i class="fa-solid fa-chevron-down"></i> Sala</th>
+            <th><i class="fa-solid fa-chevron-down"></i> Nombre</th>
+            <th><i class="fa-solid fa-chevron-down"></i> Nota última Ev</th>
+            <th><i class="fa-solid fa-chevron-down"></i> Asistencia clase</th>
+            <th><i class="fa-solid fa-chevron-down"></i> Nota próxima Ev</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Lenguaje</td><td>4° Medio A</td><td>08:00 - 09:30</td><td>302</td></tr>
-          <tr><td>Lenguaje</td><td>4° Medio B</td><td>09:45 - 11:15</td><td>303</td></tr>
-          <tr><td>Lenguaje</td><td>3° Medio A</td><td>11:30 - 13:00</td><td>204</td></tr>
-          <tr><td>Lenguaje</td><td>3° Medio B</td><td>14:00 - 15:30</td><td>205</td></tr>
+          <tr><td>Nicolás Lagos</td><td>5.9</td><td>90%</td><td>6.1</td></tr>
+          <tr><td>Gian Lucas</td><td>6.2</td><td>92%</td><td>5.8</td></tr>
+          <tr><td>Camila Soto</td><td>5.5</td><td>88%</td><td>6.0</td></tr>
+          <tr><td>Javiera Pardo</td><td>6.0</td><td>95%</td><td>6.5</td></tr>
         </tbody>
       </table>
     </div>
+  </div>
 
-    <div class="resumen">
-      <i class="fa-solid fa-volume-high"></i>
-      <i class="fa-solid fa-bell icono-campana"></i> Observaciones recientes
+  <!-- Perfil del docente -->
+  <div class="perfil-docente">
+    <img src="../img/profesor.png" alt="Profesor">
+    <p><strong>Naruto Uzumaki</strong></p>
+    <p>22.333.444-5</p>
+    <p>Profesor de: 3 asignaturas</p>
+    <p>Jornada: Mañana</p>
+    <button class="boton-audio" title="Escuchar contenido">
+      <i class="fa-solid fa-volume-high icono-audio"></i>
+    </button>
+
+    <!-- Notificaciones -->
+    <div class="resumen" style="margin-top: 15px;">
+      <i class="fa-solid fa-bell icono-campana"></i> <strong>Notificaciones</strong>
+      <ul>
+        <li>Reunión apoderados 12/06</li>
+        <li>Entrega notas semestrales 14/06</li>
+        <li>Prueba de Lenguaje no subida</li>
+      </ul>
     </div>
-    <ul>
-      <li>Acta reunión curso 4° B pendiente</li>
-      <li>Subida de calificaciones trimestre 1</li>
-      <li>Evaluaciones diagnósticas disponibles</li>
-    </ul>
   </div>
-
-  <!-- Tarjeta del profesor -->
-  <div class="perfil-estudiante">
-    <img src="../img/estudiante.png" alt="Profesor">
-    <p><strong>MARÍA GODOY</strong></p>
-    <p>RUT: 12345678-9</p>
-    <p>Docente de Lenguaje</p>
-    <p><strong>Jornada: Mañana</strong></p>
-    <i class="fa-solid fa-volume-high icono-audio"></i>
-  </div>
-
 </section>
 
 <!-- Botonera inferior -->
-<section class="botones">
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Curso</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Horario</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Evaluaciones</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Informes</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Notas</a>
-</section>
-
-<section class="botones">
-  <a class="boton-mokup" href="#">
-    <i class="fa-solid fa-file-pdf"></i> Descargar Acta PDF <i class="fa-solid fa-volume-high"></i>
-  </a>
+<section class="botones" style="margin-top: 30px;">
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Cursos</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Alumnos</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Entrevistas</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Organizaciones</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Herramientas</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Institución</a>
 </section>
 
 </body>

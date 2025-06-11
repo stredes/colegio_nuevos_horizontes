@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historial Académico - Estudiante</title>
-  <link rel="stylesheet" href="../css/portal_estudiante_style_fix.css">
+  <link rel="stylesheet" href="../css/portal_estudiante_style_fix.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <header>
-  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo">
+  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
   <h1>Historial académico</h1>
+
+  <!-- Íconos adicionales cabecera -->
+  <div style="position:absolute; top:20px; right:200px;">
+    <i class="fa-solid fa-print" title="Imprimir"></i>
+    <i class="fa-solid fa-magnifying-glass" title="Buscar"></i>
+    <i class="fa-solid fa-house" title="Inicio"></i>
+    <i class="fa-solid fa-gear" title="Configuración"></i>
+  </div>
+
   <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
   </button>
 </header>
 
-<section class="contenedor">
+<section class="contenedor" style="display: flex; gap: 20px;">
+  <!-- Filtro de curso -->
+  <div>
+    <button class="boton-audio" title="Audio Curso">
+      <i class="fa-solid fa-volume-high"></i>
+    </button>
+    <label for="selectCurso">Curso</label>
+    <select id="selectCurso">
+      <option>4MEDIO A</option>
+      <option>4MEDIO B</option>
+    </select>
+  </div>
+
   <!-- Tabla principal -->
   <div style="flex: 1 1 60%; min-width: 600px;">
     <h2 class="table-title">Asignaturas x semestre</h2>
@@ -41,42 +62,49 @@
       </table>
     </div>
 
-    <div class="resumen">
-      <button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high"></i></button>
-      <i class="fa-solid fa-bell icono-campana"></i> Resumen curso
+    <!-- Resumen curso -->
+    <div class="resumen" style="margin-top: 10px;">
+      <button class="boton-audio" title="Escuchar contenido">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+      <i class="fa-solid fa-bell icono-campana"></i> <strong>Resumen curso</strong>
+      <ul>
+        <li>solicitud de cambio DE SALA DE CURSO POR INUNDACIÓN</li>
+        <li>solicitud de renovación TNE</li>
+        <li>FOTOGRAFÍAS ANUARIO 02/06/2026</li>
+      </ul>
     </div>
-    <ul>
-      <li>solicitud de cambio DE SALA DE CURSO POR INUNDACIÓN</li>
-      <li>solicitud de renovación TNE</li>
-      <li>FOTOGRAFÍAS ANUARIO 02/06/2026</li>
-    </ul>
+
+    <!-- Generar PDF -->
+    <div style="margin-top: 15px;">
+      <button class="boton-mokup">
+        <i class="fa-solid fa-file-pdf"></i> Generar reporte PDF
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+    </div>
   </div>
 
-  <!-- Tarjeta estudiante -->
+  <!-- Panel del estudiante -->
   <div class="perfil-estudiante">
-    <img src="../img/estudiante.png" alt="Estudiante">
+    <img src="../img/estudiante.png" alt="Estudiante" />
     <p><strong>ELMA ROMAS</strong></p>
     <p>233555659-5</p>
     <p>Estudiante</p>
     <p><strong>Curso: 4MEDIO A</strong></p>
-    <button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high icono-audio"></i></button>
+    <button class="boton-audio" title="Escuchar contenido">
+      <i class="fa-solid fa-volume-high icono-audio"></i>
+    </button>
   </div>
 </section>
 
-<!-- Botonera inferior -->
-<section class="botones">
-  <a class="boton-mokup" href="#"><button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high"></i></button> Asignatura</a>
-  <a class="boton-mokup" href="#"><button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high"></i></button> Alumno</a>
-  <a class="boton-mokup" href="#"><button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high"></i></button> Semestre 1</a>
-  <a class="boton-mokup" href="#"><button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high"></i></button> Semestre 2</a>
-  <a class="boton-mokup" href="#"><button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high"></i></button> Promedio</a>
-  <a class="boton-mokup" href="#"><button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high"></i></button> Notificaciones</a>
-</section>
-
-<section class="botones">
-  <a class="boton-mokup" href="#">
-    <i class="fa-solid fa-file-pdf"></i> Generar reporte PDF <button class="boton-audio" title="Escuchar contenido"><i class="fa-solid fa-volume-high"></i></button>
-  </a>
+<!-- Botones inferiores -->
+<section class="botones" style="margin-top: 30px;">
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Asignatura</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Alumno</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Semestre 1</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Semestre 2</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Promedio</a>
+  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Notificaciones</a>
 </section>
 
 </body>
