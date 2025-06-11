@@ -1,66 +1,94 @@
+/* Fondo general */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url('../img/background.png') no-repeat center center fixed;
+  background-image: url('../img/background.png');
   background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.login-wrapper {
-  width: 100%;
+/* Encabezado con logo y título */
+header {
+  background-color: rgba(255, 255, 255, 0.95);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 3px solid #ffe600;
 }
 
+header .logo {
+  height: 60px;
+  margin-right: 15px;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #333;
+  margin: 0;
+}
+
+/* Contenedor de login */
 .login-container {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 40px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.96);
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.15);
-  width: 320px;
+  padding: 30px 40px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 
-.logo-login {
-  height: 80px;
-  max-width: 180px;
-  width: auto;
-  margin: 0 auto 20px auto;
-  display: block;
-}
-
-h2 {
-  font-size: 22px;
+.login-box h2 {
   margin-bottom: 25px;
   color: #333;
+  font-size: 24px;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid #999;
+.login-box label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #444;
+  text-align: left;
 }
 
-button {
+.login-box input {
   width: 100%;
   padding: 12px;
-  background: #000;
-  color: white;
-  font-size: 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-button:hover {
-  background: #333;
+.login-box button {
+  background-color: #ffe600;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 25px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.login-box button:hover {
+  background-color: #ffdd00;
 }

@@ -2,24 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Inicio de Sesión</title>
   <link rel="stylesheet" href="../css/portal_inicio_sesion.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
-<div class="login-wrapper">
-  <div class="login-container">
-    <img src="../img/logo.png" alt="Logo Colegio" class="logo-login" />
-    <h2>Inicio de Sesión</h2>
-    
-    <input type="text" placeholder="Usuario" />
-    <input type="password" placeholder="Contraseña" />
-    
-    <button><i class="fa-solid fa-right-to-bracket"></i> Ingresar</button>
-  </div>
-</div>
+<header>
+  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
+  <h1>Portal Educativo</h1>
+</header>
 
+<main class="login-container">
+  <form class="login-box">
+    <h2>Inicio de Sesión</h2>
+    <label for="usuario">Usuario</label>
+    <input type="text" id="usuario" placeholder="Ej: elma, carlos, maria" required />
+
+    <label for="clave">Contraseña</label>
+    <input type="password" id="clave" placeholder="********" required />
+
+    <button type="button">
+      <i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar Sesión
+    </button>
+  </form>
+</main>
+
+<!-- Scripts funcionales -->
+<script src="../js/login.js"></script>
 </body>
 </html>

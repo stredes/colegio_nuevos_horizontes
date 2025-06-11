@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portal del Apoderado</title>
   <link rel="stylesheet" href="../css/portal_apoderado.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -10,74 +10,35 @@
 <body>
 
 <header>
-  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
+  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
   <h1>Portal del Apoderado</h1>
-  <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
+  <button class="boton-mokup cerrar-sesion">
     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
   </button>
 </header>
 
 <section class="contenedor">
+  <div class="tarjeta-apoderado">
+    <h2>Resumen del Alumno</h2>
+    <p><strong>Nombre:</strong> Elma Romas</p>
+    <p><strong>Curso:</strong> 4° Medio A</p>
+    <p><strong>RUT:</strong> 233555659-5</p>
+    <p><strong>Estado:</strong> Regular</p>
+  </div>
 
-  <!-- Tabla con notas -->
-  <div style="flex: 1 1 60%; min-width: 600px;">
-    <h2 class="table-title">Notas del Estudiante</h2>
-    <div style="overflow-x: auto;">
-      <table class="tabla-cuadriculada">
-        <thead>
-          <tr>
-            <th><i class="fa-solid fa-chevron-down"></i> Asignatura</th>
-            <th><i class="fa-solid fa-chevron-down"></i> Semestre 1</th>
-            <th><i class="fa-solid fa-chevron-down"></i> Semestre 2</th>
-            <th><i class="fa-solid fa-chevron-down"></i> Promedio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Matemáticas</td><td>5.0</td><td>6.0</td><td>5.5</td></tr>
-          <tr><td>Lenguaje</td><td>6.3</td><td>5.5</td><td>5.9</td></tr>
-          <tr><td>Inglés</td><td>4.0</td><td>4.5</td><td>4.3</td></tr>
-          <tr><td>Historia</td><td>6.8</td><td>6.2</td><td>6.5</td></tr>
-          <tr><td>Física</td><td>5.2</td><td>5.3</td><td>5.3</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="resumen">
-      <i class="fa-solid fa-volume-high"></i>
-      <i class="fa-solid fa-bell icono-campana"></i> Comunicados importantes
-    </div>
+  <div class="tarjeta-apoderado">
+    <h2>Notificaciones</h2>
     <ul>
-      <li>Reunión de apoderados: 14/06/2025</li>
-      <li>Protocolo COVID actualizado</li>
-      <li>Entrega de informes: viernes 20/06/2025</li>
+      <li>📝 Certificado de alumno regular disponible</li>
+      <li>📢 Reunión de apoderados el 14/06 a las 18:00 hrs</li>
+      <li>📬 Entrega de notas semestrales habilitada</li>
     </ul>
   </div>
-
-  <!-- Tarjeta del apoderado -->
-  <div class="perfil-estudiante">
-    <img src="../img/estudiante.png" alt="Apoderado">
-    <p><strong>CARLOS RIVERA</strong></p>
-    <p>RUT: 14.222.333-4</p>
-    <p>Apoderado de: Elma Romas</p>
-    <p><strong>Curso: 4° Medio A</strong></p>
-    <i class="fa-solid fa-volume-high icono-audio"></i>
-  </div>
-
 </section>
 
-<!-- Botonera inferior -->
-<section class="botones">
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Notas</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Asistencia</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Observaciones</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Informes</a>
-</section>
-
-<section class="botones">
-  <a class="boton-mokup" href="#">
-    <i class="fa-solid fa-file-pdf"></i> Descargar Informe PDF <i class="fa-solid fa-volume-high"></i>
-  </a>
-</section>
+<!-- Scripts funcionales -->
+<script src="../js/portal_apoderado.js"></script>
+<script src="../js/navigation.js"></script>
 
 </body>
 </html>
