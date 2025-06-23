@@ -29,31 +29,31 @@ header h1 {
   margin: 0;
 }
 
-/* Contenedor de login */
-.login-container {
+/* Contenedor de registro */
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
 }
 
-.login-box {
+.register-box {
   background-color: rgba(255, 255, 255, 0.96);
   border-radius: 12px;
   padding: 30px 40px;
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 
-.login-box h2 {
+.register-box h2 {
   margin-bottom: 25px;
   color: #333;
   font-size: 24px;
 }
 
-.login-box label {
+.register-box label {
   display: block;
   margin-top: 15px;
   font-weight: bold;
@@ -61,7 +61,8 @@ header h1 {
   text-align: left;
 }
 
-.login-box input {
+.register-box input,
+.register-box select {
   width: 100%;
   padding: 12px;
   margin-top: 5px;
@@ -71,7 +72,7 @@ header h1 {
   box-sizing: border-box;
 }
 
-.login-box button {
+.register-box button {
   background-color: #ffe600;
   color: #000;
   font-weight: bold;
@@ -89,30 +90,21 @@ header h1 {
   transition: background-color 0.2s ease;
 }
 
-.login-box button:hover {
+.register-box button:hover {
   background-color: #ffdd00;
 }
 
-.login-box .btn-register {
-  background-color: #6c757d; /* Un color secundario para diferenciar */
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  margin-top: 10px; /* Espacio respecto al botón de login */
-  cursor: pointer;
-  width: 100%;
-  font-size: 16px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  transition: background-color 0.2s ease;
-  box-sizing: border-box;
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
 }
 
-.login-box .btn-register:hover {
-  background-color: #5a6268;
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
 }
