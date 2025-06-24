@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pruebas - Portal del Profesor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales consistentes con el resto del portal */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ffe68a;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 5px solid #ffe68a;
+        }
+        header .logo {
+            height: 60px;
+            width: auto;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header-spacer {
+            width: 60px;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-section {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .button-container button, .button-container a {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-save {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-save:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .btn-back {
+            background-color: #6c757d;
+            color: white;
+        }
+        .btn-back:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
+    <h1>Registro de Próximas Pruebas</h1>
+    <div class="header-spacer"></div>
+</header>
+
+<main>
+    <section class="form-section">
+        <h2>Agendar Nueva Evaluación</h2>
+        <form id="testForm">
+            <div class="form-group">
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso" required>
+                    <option value="">Seleccione un curso...</option>
+                    <option value="4MA">4° Medio A</option>
+                    <option value="4MB">4° Medio B</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="asignatura">Asignatura</label>
+                <select id="asignatura" name="asignatura" required>
+                    <option value="">Seleccione una asignatura...</option>
+                    <option value="matematicas">Matemáticas</option>
+                    <option value="lenguaje">Lenguaje</option>
+                    <option value="historia">Historia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción de la Prueba</label>
+                <input type="text" id="descripcion" name="descripcion" placeholder="Ej: Prueba de Unidad 2: Álgebra" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha de la Prueba</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="temario">Temario / Detalles</label>
+                <textarea id="temario" name="temario" placeholder="Listar los temas que se evaluarán..."></textarea>
+            </div>
+            <div class="button-container">
+                <a href="portal_profesor.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Portal</a>
+                <button type="submit" class="btn-save"><i class="fa-solid fa-calendar-check"></i> Registrar Prueba</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<script>
+    document.getElementById('testForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Prueba registrada exitosamente (simulación).');
+        window.location.href = 'portal_profesor.html';
+    });
+</script>
+
+</body>
+</html>
