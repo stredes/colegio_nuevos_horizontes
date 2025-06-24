@@ -4,84 +4,385 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal Apoderado - Vista Extendida</title>
-  <link rel="stylesheet" href="../css/portal_apoderado_ext.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9; /* Light grey background */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Header Styles (from previous interaction, adjusted for this page) */
+    header {
+        background-color: #2c3e50; /* Dark blue/charcoal */
+        color: #ffe68a; /* Yellowish color for text and icons */
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        border-bottom: 5px solid #ffe68a;
+    }
+
+    header .logo {
+        height: 60px;
+        width: auto;
+        margin-right: 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 1.8em;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    header .header-icons {
+        position: absolute;
+        top: 25px;
+        right: 170px;
+        display: flex;
+        gap: 15px;
+        font-size: 1.2em;
+    }
+
+    header .header-icons i {
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    header .header-icons i:hover {
+        color: #fff;
+    }
+
+    .boton-mokup {
+        background-color: #2c3e50;
+        color: #ffe68a;
+        border: 2px solid #ffe68a;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        text-decoration: none;
+    }
+
+    .boton-mokup:hover {
+        background-color: #ffe68a;
+        color: #2c3e50;
+        border-color: #2c3e50;
+    }
+
+    header .boton-mokup {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 8px 15px;
+        font-size: 0.95em;
+    }
+
+    /* Main Content Area */
+    .main-content {
+        flex-grow: 1;
+        padding: 20px;
+        max-width: 960px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Space between sections */
+        position: relative; /* For the filter button positioning */
+    }
+
+    /* Vista de evaluaciones Section */
+    .evaluaciones-section {
+        background-color: #d1e2ed; /* Light blue background as per image */
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.1); /* Subtle inner shadow */
+        position: relative; /* For the filter button inside */
+    }
+
+    .evaluaciones-section h2 {
+        color: #2c3e50;
+        font-size: 1.6em;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .evaluaciones-section table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    .evaluaciones-section th, .evaluaciones-section td {
+        border: 1px solid #a7c5d9; /* Lighter blue border */
+        padding: 10px;
+        text-align: center;
+        color: #34495e;
+    }
+
+    .evaluaciones-section th {
+        background-color: #92b0c7; /* Header background blue */
+        color: white;
+        font-weight: bold;
+        white-space: nowrap; /* Prevent wrapping */
+    }
+
+    .evaluaciones-section td {
+        background-color: #e0eff7; /* Alternating or overall lighter blue */
+    }
+
+    .evaluaciones-section .nota-final {
+        background-color: #7ab2d4; /* Distinct background for final note */
+        color: white;
+        font-weight: bold;
+    }
+
+    .evaluaciones-section p {
+        font-size: 0.9em;
+        color: #555;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    /* Filter Button for Evaluations */
+    .filter-evaluaciones-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #34495e; /* Darker blue */
+        color: #ffe68a;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Vista de Asistencias Section */
+    .asistencias-section {
+        background-color: #f0f4f7; /* Slightly different light background */
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content vertically */
+    }
+
+    .asistencias-section h2 {
+        color: #2c3e50;
+        font-size: 1.6em;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .asistencias-section table {
+        width: 80%; /* Smaller table width */
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    .asistencias-section th, .asistencias-section td {
+        border: 1px solid #d0dbe4;
+        padding: 8px;
+        text-align: center;
+        color: #34495e;
+    }
+
+    .asistencias-section th {
+        background-color: #e0eff7; /* Light blue header */
+        color: #2c3e50;
+        font-weight: bold;
+    }
+
+    .asistencias-section td {
+        background-color: #f8fafd; /* Very light background */
+    }
+
+    .asistencias-section .estado-aprobado {
+        color: #27ae60; /* Green for Aprobado */
+        font-weight: bold;
+    }
+
+    .asistencias-section .estado-reprobado {
+        color: #e74c3c; /* Red for Reprobado */
+        font-weight: bold;
+    }
+
+    .asistencias-section .min-attendance {
+        margin-top: 20px;
+        padding: 10px 15px;
+        background-color: #ffe68a; /* Yellow highlight */
+        border-radius: 5px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 70px;
+        }
+
+        header h1 {
+            text-align: left;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        header .header-icons {
+            top: unset;
+            bottom: 15px;
+            right: 20px;
+            left: 20px;
+            justify-content: space-around;
+            width: auto;
+        }
+
+        header .boton-mokup {
+            top: 15px;
+            right: 15px;
+        }
+
+        .main-content {
+            padding: 15px;
+        }
+
+        .filter-evaluaciones-button {
+            top: 15px;
+            left: 15px;
+            font-size: 0.9em;
+        }
+
+        .evaluaciones-section th, .evaluaciones-section td,
+        .asistencias-section th, .asistencias-section td {
+            padding: 8px 5px;
+            font-size: 0.9em;
+        }
+
+        .asistencias-section table {
+            width: 95%; /* Adjust for smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 1.5em;
+        }
+
+        .evaluaciones-section, .asistencias-section {
+            padding: 15px;
+        }
+
+        .boton-mokup {
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        .evaluaciones-section th, .evaluaciones-section td {
+            font-size: 0.8em;
+            word-break: break-word; /* Allow words to break */
+        }
+
+        .evaluaciones-section th:nth-child(even),
+        .evaluaciones-section td:nth-child(even) {
+            word-break: normal; /* Keep numbers together */
+        }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
-  <h1>Vista Extendida del Apoderado</h1>
+  <img src="https://i.imgur.com/k2V1L6y.png" alt="Colegio Nuevos Horizontes" class="logo" />
+  <h1>Portal de Apoderado</h1>
 
-  <div style="position:absolute; top:20px; right:200px;">
+  <div class="header-icons">
     <i class="fa-solid fa-print" title="Imprimir"></i>
     <i class="fa-solid fa-magnifying-glass" title="Buscar"></i>
     <i class="fa-solid fa-house" title="Inicio"></i>
     <i class="fa-solid fa-gear" title="Configuración"></i>
   </div>
 
-  <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
+  <button class="boton-mokup">
     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
   </button>
 </header>
 
-<section class="contenedor" style="display: flex; gap: 20px;">
-  <!-- Imagen del estudiante -->
-  <div class="perfil-estudiante">
-    <img src="../img/estudiante.png" alt="Estudiante" />
-    <p><strong>ELMA ROMAS</strong></p>
-    <p>Curso: 4° Medio A</p>
-    <p>Promedio general: 5.9</p>
-    <button class="boton-audio" title="Escuchar contenido">
-      <i class="fa-solid fa-volume-high"></i>
+<div class="main-content">
+  <section class="evaluaciones-section">
+    <button class="filter-evaluaciones-button">
+      <i class="fa-solid fa-volume-high"></i> Filtros <i class="fa-solid fa-chevron-down"></i>
     </button>
-  </div>
-
-  <!-- Panel de notas -->
-  <div class="panel-notas" style="flex: 1;">
-    <h2><i class="fa-solid fa-volume-high"></i> Historial Académico</h2>
-    <table class="tabla-cuadriculada">
+    <h2>Vista de evaluaciones</h2>
+    <table>
       <thead>
         <tr>
           <th>Asignatura</th>
-          <th>Nota</th>
+          <th>Ev1.(35%)</th>
+          <th>Ev2.(35%)</th>
+          <th>Ev3.(30%)</th>
+          <th>Nota presentación (40%)</th>
+          <th>Exámen (60%)</th>
+          <th class="nota-final">Nota Final (100%)</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Matemáticas</td><td>5.4</td></tr>
-        <tr><td>Lenguaje</td><td>6.9</td></tr>
-        <tr><td>Ciencias</td><td>5.1</td></tr>
-        <tr><td>Historia</td><td>6.2</td></tr>
+        <tr><td>Matemáticas</td><td>7</td><td>6</td><td>7</td><td>6.5</td><td>4.5</td><td class="nota-final">5.5</td></tr>
+        <tr><td>Historia</td><td>4</td><td>5</td><td>4</td><td>4.7</td><td>4.5</td><td class="nota-final">4.6</td></tr>
+        <tr><td>Ciencias</td><td>5</td><td>3</td><td>5</td><td>4.5</td><td>5</td><td class="nota-final">4.7</td></tr>
+        <tr><td>Inglés</td><td>6.5</td><td>6.5</td><td>6.5</td><td>6.5</td><td>6</td><td class="nota-final">6.2</td></tr>
       </tbody>
     </table>
-  </div>
+    <p>La nota de presentación equivale a tu 40% + el 60% del exámen es igual a tu nota final</p>
+  </section>
 
-  <!-- Panel de asistencia -->
-  <div class="panel-asistencia">
-    <h2><i class="fa-solid fa-volume-high"></i> Historial Asistencias</h2>
-    <ul>
-      <li>01/06 - Presente</li>
-      <li>02/06 - Inasistencia</li>
-      <li>03/06 - Presente</li>
-      <li>04/06 - Presente</li>
-      <li>05/06 - Presente</li>
-    </ul>
-
-    <!-- Indicador circular ficticio (puede ser mejorado con CSS) -->
-    <div class="indicador-asistencia" style="margin-top: 15px;">
-      <p>Asistencia: 80%</p>
-      <p>Inasistencia: 20%</p>
+  <section class="asistencias-section">
+    <h2>Vista de asistencias</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Asignatura</th>
+          <th>Ausentes</th>
+          <th>Presentes</th>
+          <th>%</th>
+          <th>Estado</th>
+          <th>Posibles faltantes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Matemáticas</td><td>7</td><td>33/40</td><td>82.5%</td><td class="estado-aprobado">Aprobado</td><td>0</td></tr>
+        <tr><td>Historia</td><td>15</td><td>25/40</td><td>62.5%</td><td class="estado-reprobado">Reprobado</td><td>0</td></tr>
+        <tr><td>Ciencias</td><td>10</td><td>30/40</td><td>75%</td><td class="estado-aprobado">Aprobado</td><td>0</td></tr>
+        <tr><td>Inglés</td><td>0</td><td>40/40</td><td>100%</td><td class="estado-aprobado">Aprobado</td><td>0</td></tr>
+      </tbody>
+    </table>
+    <div class="min-attendance">
+      Mínimo 75% de asistencia
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- Botón de filtros -->
-<section class="acciones" style="margin-top: 30px; text-align: center;">
-  <button class="boton-mokup">
-    <i class="fa-solid fa-sliders"></i> Filtros
-    <i class="fa-solid fa-volume-high"></i>
-  </button>
-</section>
-
-</body> 
+</body>
 </html>

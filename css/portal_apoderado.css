@@ -1,85 +1,42 @@
-/* Fondo institucional */
+/* Estilos generales para el body y main para consistencia con otras páginas */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-image: url('../img/background.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Encabezado */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 1000px; /* Ajusta este valor según el diseño deseado */
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Aquí irían los estilos existentes de portal_apoderado.css */
+/* Por ejemplo: */
+/*
 header {
-  background-color: rgba(255, 255, 255, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
-  border-bottom: 3px solid #ffe600;
+    background-color: #2c3e50;
+    color: rgb(255, 236, 130);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header .logo {
-  height: 60px;
+.logo {
+    height: 50px;
+    width: auto;
 }
 
-header h1 {
-  flex: 1;
-  text-align: center;
-  font-size: 26px;
-  margin: 0;
-  color: #333;
+.boton-mokup {
+    // ... tus estilos de botón existentes
 }
-
-.cerrar-sesion {
-  background-color: #ffe600;
-  border: none;
-  padding: 10px 15px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.cerrar-sesion i {
-  margin-right: 6px;
-}
-
-/* Contenedor de tarjetas */
-.contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 40px;
-}
-
-/* Tarjeta de información */
-.tarjeta-apoderado {
-  background-color: rgba(255, 255, 255, 0.96);
-  border-left: 8px solid #ffe600;
-  border-radius: 12px;
-  padding: 25px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.tarjeta-apoderado h2 {
-  margin-top: 0;
-  font-size: 20px;
-  color: #444;
-}
-
-.tarjeta-apoderado ul {
-  padding-left: 20px;
-  list-style: none;
-}
-
-.tarjeta-apoderado ul li::before {
-  content: "🔔 ";
-  margin-right: 5px;
-}
-
-.tarjeta-apoderado ul li {
-  margin-bottom: 10px;
-}
+*/

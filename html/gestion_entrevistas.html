@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Entrevistas - Colegio Nuevos Horizontes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #2c3e50;
+            color: rgb(255, 236, 130);
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            height: 50px;
+            width: auto;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header-spacer {
+            width: 50px;
+            flex-shrink: 0;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-section, .list-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="time"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .button-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .button-container button:hover {
+            background-color: #2980b9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .actions-cell button {
+            margin-right: 5px;
+            padding: 5px 8px;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        .actions-cell .btn-edit {
+            background-color: #f0ad4e;
+            color: white;
+            border: none;
+        }
+        .actions-cell .btn-cancel {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="../img/logo.png" alt="Logo Colegio Nuevos Horizontes">
+    <h1>Gestión de Entrevistas</h1>
+    <div class="header-spacer"></div>
+</header>
+
+<main>
+    <section class="form-section">
+        <h2>Agendar Nueva Entrevista</h2>
+        <form id="entrevistaForm">
+            <div class="form-group">
+                <label for="tipo_entrevista">Tipo de Entrevista</label>
+                <select id="tipo_entrevista" name="tipo_entrevista" required>
+                    <option value="">Seleccione...</option>
+                    <option value="academica">Académica</option>
+                    <option value="administrativa">Administrativa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fecha_entrevista">Fecha</label>
+                <input type="date" id="fecha_entrevista" name="fecha_entrevista" required>
+            </div>
+            <div class="form-group">
+                <label for="hora_entrevista">Hora</label>
+                <input type="time" id="hora_entrevista" name="hora_entrevista" required>
+            </div>
+            <div class="form-group">
+                <label for="participantes_entrevista">Participantes</label>
+                <input type="text" id="participantes_entrevista" name="participantes_entrevista" placeholder="Ej: Juan Pérez (Estudiante), Ana Gómez (Apoderado), Prof. Carlos Lara" required>
+            </div>
+            <div class="form-group">
+                <label for="motivo_entrevista">Motivo/Tema</label>
+                <input type="text" id="motivo_entrevista" name="motivo_entrevista" placeholder="Ej: Revisión de rendimiento, Proceso de matrícula" required>
+            </div>
+            <div class="form-group">
+                <label for="notas_entrevista">Notas Adicionales</label>
+                <textarea id="notas_entrevista" name="notas_entrevista" placeholder="Detalles adicionales sobre la entrevista..."></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit"><i class="fa-solid fa-calendar-plus"></i> Agendar Entrevista</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="list-section">
+        <h2>Entrevistas Programadas</h2>
+        <table id="tablaEntrevistas">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Tipo</th>
+                    <th>Participantes</th>
+                    <th>Motivo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Filas de ejemplo, se pueden agregar dinámicamente -->
+                <tr>
+                    <td>2024-08-15</td>
+                    <td>10:00</td>
+                    <td>Académica</td>
+                    <td>Laura Torres (Est.), Sr. Torres (Apo.), Prof. Silva</td>
+                    <td>Progreso académico</td>
+                    <td>Programada</td>
+                    <td class="actions-cell">
+                        <button class="btn-edit" title="Modificar"><i class="fa-solid fa-pencil"></i></button>
+                        <button class="btn-cancel" title="Cancelar"><i class="fa-solid fa-times-circle"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2024-08-20</td>
+                    <td>15:30</td>
+                    <td>Administrativa</td>
+                    <td>Familia Rodríguez</td>
+                    <td>Consulta becas</td>
+                    <td>Programada</td>
+                    <td class="actions-cell">
+                        <button class="btn-edit" title="Modificar"><i class="fa-solid fa-pencil"></i></button>
+                        <button class="btn-cancel" title="Cancelar"><i class="fa-solid fa-times-circle"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="summarySection" style="display: none; margin-top: 30px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+        <h2>Resumen de la Entrevista Agendada</h2>
+        <div id="interviewDetails">
+            <!-- Details will be inserted here by JavaScript -->
+        </div>
+        <div class="form-group" style="margin-top: 20px;">
+            <label for="emailToSendSummary">Enviar resumen a:</label>
+            <input type="email" id="emailToSendSummary" placeholder="correo@ejemplo.com">
+        </div>
+        <div class="button-container" style="text-align: left;">
+            <button type="button" id="sendSummaryEmailBtn"><i class="fa-solid fa-envelope"></i> Enviar Resumen por Correo</button>
+            <button type="button" id="hideSummaryBtn" style="background-color: #6c757d;"><i class="fa-solid fa-xmark"></i> Cerrar Resumen</button>
+        </div>
+    </section>
+</main>
+
+<script>
+    document.getElementById('entrevistaForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const tipo = document.getElementById('tipo_entrevista').value;
+        const fecha = document.getElementById('fecha_entrevista').value;
+        const hora = document.getElementById('hora_entrevista').value;
+        const participantes = document.getElementById('participantes_entrevista').value;
+        const motivo = document.getElementById('motivo_entrevista').value;
+        // const notas = document.getElementById('notas_entrevista').value; // Notas no se muestran en tabla por simplicidad
+
+        const tablaBody = document.getElementById('tablaEntrevistas').getElementsByTagName('tbody')[0];
+        const nuevaFila = tablaBody.insertRow();
+
+        nuevaFila.insertCell().textContent = fecha;
+        nuevaFila.insertCell().textContent = hora;
+        nuevaFila.insertCell().textContent = tipo.charAt(0).toUpperCase() + tipo.slice(1); // Capitalizar
+        nuevaFila.insertCell().textContent = participantes;
+        nuevaFila.insertCell().textContent = motivo;
+        nuevaFila.insertCell().textContent = 'Programada'; // Estado por defecto
+
+        const cellAcciones = nuevaFila.insertCell();
+        cellAcciones.classList.add('actions-cell');
+        cellAcciones.innerHTML = `
+            <button class="btn-edit" title="Modificar"><i class="fa-solid fa-pencil"></i></button>
+            <button class="btn-cancel" title="Cancelar"><i class="fa-solid fa-times-circle"></i></button>
+        `;
+        
+        // Populate summary section
+        const interviewDetailsDiv = document.getElementById('interviewDetails');
+        interviewDetailsDiv.innerHTML = `
+            <p><strong>Tipo:</strong> ${tipo.charAt(0).toUpperCase() + tipo.slice(1)}</p>
+            <p><strong>Fecha:</strong> ${fecha}</p>
+            <p><strong>Hora:</strong> ${hora}</p>
+            <p><strong>Participantes:</strong> ${participantes}</p>
+            <p><strong>Motivo:</strong> ${motivo}</p>
+            ${notas ? `<p><strong>Notas Adicionales:</strong> ${notas}</p>` : ''}
+        `;
+        document.getElementById('summarySection').style.display = 'block'; // Show summary
+
+        this.reset(); // Limpiar el formulario
+    });
+
+    document.getElementById('sendSummaryEmailBtn').addEventListener('click', function() {
+        const email = document.getElementById('emailToSendSummary').value;
+        if (email) {
+            alert(`Simulando envío de resumen a: ${email}\n(Esta es una funcionalidad de simulación, no se envía un correo real).`);
+        } else {
+            alert('Por favor, ingrese una dirección de correo electrónico.');
+        }
+    });
+
+    document.getElementById('hideSummaryBtn').addEventListener('click', function() {
+        document.getElementById('summarySection').style.display = 'none';
+        document.getElementById('emailToSendSummary').value = ''; // Clear email field
+    });
+
+    document.getElementById('tablaEntrevistas').addEventListener('click', function(event) {
+        if (event.target.closest('.btn-edit')) {
+            alert('Funcionalidad "Modificar" no implementada en esta simulación.');
+        }
+        if (event.target.closest('.btn-cancel')) {
+            if (confirm('¿Está seguro de que desea cancelar esta entrevista?')) {
+                event.target.closest('tr').remove(); // Elimina la fila
+                alert('Entrevista cancelada.');
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
