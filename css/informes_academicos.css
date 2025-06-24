@@ -1,15 +1,17 @@
+/* Estilo general */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f6f9;
+  background-color: #f3f5f9;
   color: #333;
 }
 
+/* Encabezado */
 header {
   background-color: #003366;
-  color: white;
-  padding: 20px;
+  color: #fff;
+  padding: 20px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,58 +19,111 @@ header {
 
 header img.logo {
   height: 60px;
+  margin-right: 20px;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 24px;
   flex-grow: 1;
-  text-align: center;
+  font-size: 24px;
+  margin: 0;
 }
 
-.boton-imprimir {
-  background-color: #ffcc00;
-  color: #003366;
+.btn-volver {
+  background-color: #ffc107;
+  color: #000;
+  text-decoration: none;
   padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   font-weight: bold;
-  cursor: pointer;
 }
 
-main {
+.btn-volver i {
+  margin-right: 5px;
+}
+
+/* Contenedor general */
+.contenedor {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+}
+
+/* Panel de descarga */
+.panel-descarga {
+  background-color: #fff;
   padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 45%;
 }
 
-.info-panel h2 {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.tabla-informes {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.tabla-informes th,
-.tabla-informes td {
-  padding: 12px;
-  border: 1px solid #ccc;
-  text-align: center;
-}
-
-.tabla-informes th {
-  background-color: #003366;
-  color: white;
-}
-
-.tabla-informes tbody tr:hover {
-  background-color: #e8f4ff;
-}
-
-.icono-accesibilidad {
+.panel-descarga h2 {
   color: #003366;
+  margin-bottom: 20px;
+}
+
+.panel-descarga form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.panel-descarga select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.panel-descarga button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.panel-descarga button:hover {
+  background-color: #005199;
+}
+
+/* Panel de historial */
+.panel-historial {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 45%;
+}
+
+.panel-historial h2 {
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.panel-historial ul {
+  list-style: none;
+  padding: 0;
+}
+
+.panel-historial ul li {
+  background-color: #f6f9fc;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #003366;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-historial ul li i {
+  color: #d32f2f;
 }

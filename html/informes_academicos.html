@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Informes Académicos</title>
   <link rel="stylesheet" href="../css/informes_academicos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -10,48 +10,44 @@
 <body>
 
 <header>
-  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo">
+  <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
   <h1>Informes Académicos</h1>
-  <button id="btn-imprimir" class="boton-imprimir">
-    <i class="fa-solid fa-print"></i> Imprimir
-  </button>
+  <a href="portal_profesor.html" class="btn-volver"><i class="fa-solid fa-arrow-left"></i> Volver</a>
 </header>
 
-<main>
-  <section class="info-panel">
-    <h2><i class="fa-solid fa-file-lines"></i> Detalle por Estudiante</h2>
-    <table class="tabla-informes">
-      <thead>
-        <tr>
-          <th>Estudiante</th>
-          <th>Asignatura</th>
-          <th>Promedio</th>
-          <th>Asistencia</th>
-          <th>Observación</th>
-          <th><i class="fa-solid fa-volume-high" title="Escuchar"></i></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Lucas Soto</td>
-          <td>Lenguaje</td>
-          <td>5.8</td>
-          <td>91%</td>
-          <td>Buena participación</td>
-          <td><i class="fa-solid fa-volume-high icono-accesibilidad"></i></td>
-        </tr>
-        <tr>
-          <td>Valentina Rojas</td>
-          <td>Matemáticas</td>
-          <td>6.2</td>
-          <td>95%</td>
-          <td>Excelente desempeño</td>
-          <td><i class="fa-solid fa-volume-high icono-accesibilidad"></i></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</main>
+<section class="contenedor">
+  <div class="panel-descarga">
+    <h2><i class="fa-solid fa-download"></i> Descarga de Informes Finales</h2>
+    <form id="formInformes">
+      <label for="asignatura">Asignatura:</label>
+      <select id="asignatura">
+        <option>Lenguaje</option>
+        <option>Matemáticas</option>
+        <option>Historia</option>
+        <option>Ciencias</option>
+      </select>
+
+      <label for="curso">Curso:</label>
+      <select id="curso">
+        <option>1° Medio A</option>
+        <option>2° Medio B</option>
+        <option>3° Medio C</option>
+        <option>4° Medio A</option>
+      </select>
+
+      <button type="submit"><i class="fa-solid fa-file-export"></i> Generar Informe</button>
+    </form>
+  </div>
+
+  <div class="panel-historial">
+    <h2><i class="fa-solid fa-clock-rotate-left"></i> Historial de Informes</h2>
+    <ul>
+      <li>Lenguaje - 4° Medio A - 2025/06/24 <i class="fa-solid fa-file-pdf"></i></li>
+      <li>Historia - 3° Medio C - 2025/06/20 <i class="fa-solid fa-file-pdf"></i></li>
+      <li>Matemáticas - 2° Medio B - 2025/06/15 <i class="fa-solid fa-file-pdf"></i></li>
+    </ul>
+  </div>
+</section>
 
 <script src="../js/informes_academicos.js"></script>
 </body>

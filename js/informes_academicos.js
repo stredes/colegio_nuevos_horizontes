@@ -1,31 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const imprimirBtn = document.getElementById("btnImprimir");
+  const btnDescargar = document.getElementById("descargarBtn");
 
-  if (imprimirBtn) {
-    imprimirBtn.addEventListener("click", () => {
-      window.print();
-    });
-  }
+  btnDescargar.addEventListener("click", (e) => {
+    e.preventDefault();
 
-  // Función de accesibilidad: lectura por voz
-  document.querySelectorAll(".fa-volume-high").forEach(icono => {
-    icono.addEventListener("click", () => {
-      const texto = capturarTexto(icono);
-      if (texto) {
-        const mensaje = new SpeechSynthesisUtterance(texto);
-        mensaje.lang = "es-ES";
-        speechSynthesis.speak(mensaje);
-      }
-    });
+    const curso = document.getElementById("curso").value;
+    const asignatura = document.getElementById("asignatura").value;
+    const tipo = document.getElementById("tipoInforme").value;
+
+    if (!curso || !asignatura || !tipo) {
+      alert("Por favor, complete todos los campos antes de descargar.");
+      return;
+    }
+
+    // Simular descarga
+    const nombreArchivo = `${tipo}_${asignatura}_${curso}.pdf`.replace(/\s+/g, "_").toLowerCase();
+
+    // Mostrar mensaje simulado (puede integrarse con descarga real más adelante)
+    alert(`✅ Informe generado: ${nombreArchivo}`);
+
+    // Agregar el informe al historial (en el panel derecho)
+    const listaHistorial = document.getElementById("listaHistorial");
+    const nuevoItem = document.createElement("li");
+    nuevoItem.innerHTML = `<i class="fa-solid fa-file-pdf"></i> ${nombreArchivo}`;
+    listaHistorial.prepend(nuevoItem);
   });
 });
-
-function capturarTexto(elemento) {
-  const fila = elemento.closest("tr");
-  if (fila) {
-    return fila.innerText;
-  }
-
-  const seccion = elemento.closest("section") || elemento.closest("main");
-  return seccion ? seccion.innerText : "No se encontró información cercana para leer.";
-}

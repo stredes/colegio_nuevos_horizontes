@@ -6,11 +6,12 @@
   <title>Portal Principal de Pruebas</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f6f9;
       margin: 0;
       padding: 0;
     }
+
     header {
       background-color: #2c3e50;
       color: white;
@@ -19,29 +20,40 @@
       align-items: center;
       gap: 20px;
     }
+
     header .logo {
       height: 60px;
-      width: auto;
     }
+
     header h1 {
-      margin: 0;
       font-size: 1.8em;
+      margin: 0;
     }
+
     main {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
+
     h2 {
       color: #2c3e50;
+      margin-bottom: 20px;
     }
+
     ul {
       list-style: none;
       padding: 0;
     }
+
     li {
-      margin: 12px 0;
+      margin: 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
+
     a.button {
       display: inline-block;
       padding: 10px 20px;
@@ -49,49 +61,51 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      margin-right: 10px;
+      font-weight: 500;
       transition: background-color 0.3s;
     }
+
     a.button:hover {
       background-color: #2980b9;
     }
+
     .rf {
       font-size: 0.9em;
-      color: #555;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="img/logo.png" alt="Logo Colegio Nuevos Horizontes" class="logo">
-  <h1>¡Bienvenidos a nuestro Colegio!</h1>
-</header> 
+  <header>
+    <img src="img/logo.png" alt="Logo Colegio Nuevos Horizontes" class="logo">
+    <h1>¡Bienvenidos a nuestro Colegio!</h1>
+  </header> 
 
-<main>
-  <h2>Selecciona una vista para testear:</h2>
-  <ul>
-    <li><a class="button" href="html/inicio_sesion.html" target="_blank">Inicio de Sesión</a><span class="rf">RF4: Acceso por roles</span></li>
-    <li><a class="button" href="html/portal_estudiante.html" target="_blank">Portal Estudiante</a><span class="rf">RF17</span></li>
-    <li><a class="button" href="html/portal_profesor.html" target="_blank">Portal Profesor</a><span class="rf">RF19</span></li>
-    <li><a class="button" href="html/portal_apoderado.html" target="_blank">Portal Apoderado</a><span class="rf">RF18</span></li>
-    <li><a class="button" href="html/portal_apoderado_ext.html" target="_blank">Portal Apoderado Extensivo</a><span class="rf">RF18 (vista extendida)</span></li>
-    <li><a class="button" href="html/clases_asincronicas.html" target="_blank">Clases Asincrónicas</a><span class="rf">RF13</span></li>
-    <li><a class="button" href="html/confirmacion_continuidad.html" target="_blank">Confirmación de Continuidad</a><span class="rf">RF6</span></li>
-    <li><a class="button" href="html/actualizar_ficha.html" target="_blank">Actualizar Ficha</a><span class="rf">RF7</span></li>
-    <li><a class="button" href="html/examen_lenguaje.html" target="_blank">Examen Lenguaje</a><span class="rf">RF2</span></li>
-    <li><a class="button" href="html/examen_matematicas.html" target="_blank">Examen Matemáticas</a><span class="rf">RF2</span></li>
-    <li><a class="button" href="html/firma_contrato.html" target="_blank">Firma Contrato</a><span class="rf">RF8</span></li>
-    <li><a class="button" href="html/gestion_entrevistas.html" target="_blank">Gestión Entrevistas</a><span class="rf">RF3 / RF15</span></li>
-    <li><a class="button" href="html/pago_matricula.html" target="_blank">Pago Matrícula</a><span class="rf">RF9</span></li>
-    <li><a class="button" href="html/editar_datos_estudiante.html" target="_blank">Editar Datos Estudiante</a><span class="rf">RF7</span></li>
-    <li><a class="button" href="html/editar_datos_sensibles.html" target="_blank">Editar Datos Sensibles</a><span class="rf">RF7</span></li>
-    <li><a class="button" href="html/registro_de_notas.html" target="_blank">Registro de Notas</a><span class="rf">RF14</span></li>
-    <li><a class="button" href="html/registro_de_pruebas.html" target="_blank">Registro de Pruebas</a><span class="rf">RF14</span></li>
-    <li><a class="button" href="html/registro.html" target="_blank">Registro</a><span class="rf">RF1 / RF5</span></li>
-    <li><a class="button" href="html/seleccion_examen.html" target="_blank">Selección de Examen</a><span class="rf">RF14</span></li>
-  </ul>
-</main>
+  <main>
+    <h2>Selecciona una vista para testear:</h2>
+    <ul>
+      <li><a class="button" href="html/inicio_sesion.html" target="_blank">Inicio de Sesión</a><span class="rf">RF4: Acceso por roles</span></li>
+      <li><a class="button" href="html/portal_estudiante.html" target="_blank">Portal Estudiante</a><span class="rf">RF17</span></li>
+      <li><a class="button" href="html/portal_profesor.html" target="_blank">Portal Profesor</a><span class="rf">RF19</span></li>
+      <li><a class="button" href="html/portal_apoderado.html" target="_blank">Portal Apoderado</a><span class="rf">RF18</span></li>
+      <li><a class="button" href="html/portal_apoderado_ext.html" target="_blank">Portal Apoderado Extensivo</a><span class="rf">RF18 (vista extendida)</span></li>
+      <li><a class="button" href="html/clases_asincronicas.html" target="_blank">Clases Asincrónicas</a><span class="rf">RF13</span></li>
+      <li><a class="button" href="html/confirmacion_continuidad.html" target="_blank">Confirmación de Continuidad</a><span class="rf">RF6</span></li>
+      <li><a class="button" href="html/actualizar_ficha.html" target="_blank">Actualizar Ficha</a><span class="rf">RF7</span></li>
+      <li><a class="button" href="html/examen_lenguaje.html" target="_blank">Examen Lenguaje</a><span class="rf">RF2</span></li>
+      <li><a class="button" href="html/examen_matematicas.html" target="_blank">Examen Matemáticas</a><span class="rf">RF2</span></li>
+      <li><a class="button" href="html/firma_contrato.html" target="_blank">Firma Contrato</a><span class="rf">RF8</span></li>
+      <li><a class="button" href="html/gestion_entrevistas.html" target="_blank">Gestión Entrevistas</a><span class="rf">RF3 / RF15</span></li>
+      <li><a class="button" href="html/pago_matricula.html" target="_blank">Pago Matrícula</a><span class="rf">RF9</span></li>
+      <li><a class="button" href="html/editar_datos_estudiante.html" target="_blank">Editar Datos Estudiante</a><span class="rf">RF7</span></li>
+      <li><a class="button" href="html/editar_datos_sensibles.html" target="_blank">Editar Datos Sensibles</a><span class="rf">RF7</span></li>
+      <li><a class="button" href="html/registro_de_notas.html" target="_blank">Registro de Notas</a><span class="rf">RF14</span></li>
+      <li><a class="button" href="html/registro_de_pruebas.html" target="_blank">Registro de Pruebas</a><span class="rf">RF14</span></li>
+      <li><a class="button" href="html/registro.html" target="_blank">Registro</a><span class="rf">RF1 / RF5</span></li>
+      <li><a class="button" href="html/seleccion_examen.html" target="_blank">Selección de Examen</a><span class="rf">RF14</span></li>
+    </ul>
+  </main>
 
 </body>
 </html>
