@@ -128,6 +128,18 @@ button.boton-mokup {
   border-radius: 5px;
 }
 
+.resumen ul {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 0 0 15px;
+  list-style: disc outside;
+  color: inherit;
+  flex-grow: 1;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 ul {
   margin: 10px 0 20px 0;
   padding: 15px;
