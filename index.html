@@ -1,79 +1,111 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Principal de Pruebas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px; /* Espacio entre el logo y el título */
-        }
-        header .logo {
-            height: 60px;
-            width: auto;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
-        }
-        main {
-            padding: 30px;
-            max-width: 600px;
-            margin: auto;
-        }
-        h2 {
-            color: #2c3e50;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a.button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        a.button:hover {
-            background-color: #2980b9;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portal Principal de Pruebas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #e0ecf8, #fdfbfb);
+      color: #2c3e50;
+    }
+
+    header {
+      background-color: rgba(44, 62, 80, 0.9);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    header .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.6em;
+      color: #2c3e50;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 15px 0;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    a.button:hover {
+      background-color: #2980b9;
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #ecf0f1;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <img src="img/logo.png" alt="Logo Colegio Nuevos Horizontes" class="logo">
-    <h1>¡Bienvenidos a nuestro Colegio!</h1>
+  <img src="img/logo.png" alt="Logo Colegio Nuevos Horizontes" class="logo" />
+  <h1>Portal de Pruebas - Colegio Nuevos Horizontes</h1>
 </header> 
 
 <main>
-    <h2>Selecciona una vista para testear:</h2>
-    <ul>
-        <li><a class="button" href="html/inicio_sesion.html" target="_blank">Inicio de Sesión</a></li>
-        <li><a class="button" href="html/portal_estudiante.html" target="_blank">Portal Estudiante</a></li>
-        <li><a class="button" href="html/portal_profesor.html" target="_blank">Portal Profesor</a></li>
-        <li><a class="button" href="html/portal_apoderado.html" target="_blank">Portal Apoderado</a></li>
-        <li><a class="button" href="html/portal_apoderado_ext.html" target="_blank">Portal Apoderado Extensivo</a></li>
-        <li><a class="button" href="html/clases_asincronicas.html" target="_blank">Clases Asincrónicas</a></li>
-    </ul>
+  <h2><i class="fa-solid fa-vial"></i> Selecciona una vista para testear:</h2>
+  <ul>
+    <li><a class="button" href="html/inicio_sesion.html" target="_blank"><i class="fa-solid fa-right-to-bracket"></i> Inicio de Sesión</a></li>
+    <li><a class="button" href="html/portal_estudiante.html" target="_blank"><i class="fa-solid fa-user-graduate"></i> Portal Estudiante</a></li>
+    <li><a class="button" href="html/portal_profesor.html" target="_blank"><i class="fa-solid fa-chalkboard-user"></i> Portal Profesor</a></li>
+    <li><a class="button" href="html/portal_apoderado.html" target="_blank"><i class="fa-solid fa-users"></i> Portal Apoderado</a></li>
+    <li><a class="button" href="html/portal_apoderado_ext.html" target="_blank"><i class="fa-solid fa-layer-group"></i> Portal Apoderado Extensivo</a></li>
+    <li><a class="button" href="html/clases_asincronicas.html" target="_blank"><i class="fa-solid fa-laptop"></i> Clases Asincrónicas</a></li>
+  </ul>
 </main>
+
+<footer>
+  &copy; 2025 Colegio Nuevos Horizontes. Todos los derechos reservados.
+</footer>
 
 </body>
 </html>

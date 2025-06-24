@@ -21,7 +21,7 @@
       <form id="continuidadForm" novalidate>
         <div class="form-group">
           <label for="nombre">Nombre del Estudiante</label>
-          <input type="text" id="nombre" disabled value="Juan Pérez" />
+          <input type="text" id="nombre" disabled />
         </div>
 
         <div class="form-group">
@@ -45,6 +45,30 @@
     <p>&copy; 2025 Colegio Nuevos Horizontes. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="../js/confirmacion_continuidad.js"></script>
+  <script>
+    // Verifica si hay sesión activa
+    const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+    if (!usuario) {
+      alert("Debes iniciar sesión primero.");
+      window.location.href = "inicio_sesion.html";
+    } else {
+      // Cargar el nombre del estudiante
+      if (usuario.estudiante) {
+        document.getElementById("nombre").value = usuario.estudiante;
+      } else {
+        document.getElementById("nombre").value = usuario.nombre || "Estudiante";
+      }
+    }
+
+    // Guardar la confirmación en localStorage
+    document.getElementById("continuidadForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      usuario.continuidadConfirmada = true;
+      localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+      alert("¡Gracias por confirmar tu continuidad para el año 2025!");
+      window.location.href = "portal_estudiante.html";
+    });
+  </script>
+
 </body>
 </html>

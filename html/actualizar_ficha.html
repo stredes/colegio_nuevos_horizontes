@@ -20,7 +20,7 @@
 
     <form id="fichaForm" novalidate>
       <label for="nombre">Nombre del Estudiante</label>
-      <input type="text" id="nombre" disabled value="Juan Pérez" />
+      <input type="text" id="nombre" disabled />
 
       <label for="direccion">Dirección</label>
       <input type="text" id="direccion" placeholder="Ej: Av. Siempre Viva 123" required />
@@ -48,6 +48,39 @@
   </section>
 </main>
 
-<script src="../js/actualizar_ficha.js"></script>
+<footer class="footer">
+  <p>&copy; 2025 Colegio Nuevos Horizontes. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+  if (!usuario) {
+    alert("Debes iniciar sesión.");
+    window.location.href = "inicio_sesion.html";
+  } else {
+    document.getElementById("nombre").value = usuario.estudiante || usuario.nombre || "";
+    document.getElementById("direccion").value = usuario.direccion || "";
+    document.getElementById("telefono").value = usuario.telefono || "";
+    document.getElementById("correo").value = usuario.correo || "";
+    document.getElementById("apoderado").value = usuario.apoderado || "";
+    document.getElementById("emergencia").value = usuario.emergencia || "";
+  }
+
+  document.getElementById("fichaForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    usuario.direccion = document.getElementById("direccion").value;
+    usuario.telefono = document.getElementById("telefono").value;
+    usuario.correo = document.getElementById("correo").value;
+    usuario.apoderado = document.getElementById("apoderado").value;
+    usuario.emergencia = document.getElementById("emergencia").value;
+
+    localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+
+    alert("✅ Ficha actualizada correctamente.");
+    window.location.href = "portal_estudiante.html";
+  });
+</script>
+
 </body>
 </html>
