@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Observaciones del Estudiante</title>
+  <link rel="stylesheet" href="../css/observaciones.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <img src="../img/logo.png" alt="Logo Colegio" class="logo">
+    <h1>Observaciones Académicas</h1>
+    <button class="logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</button>
+  </header>
+
+  <main class="contenedor">
+    <section class="formulario">
+      <h2>Registrar Observación</h2>
+      <form id="formObservacion">
+        <label>Estudiante:
+          <input type="text" name="estudiante" required>
+        </label>
+        <label>Curso:
+          <input type="text" name="curso" required>
+        </label>
+        <label>Observación:
+          <textarea name="detalle" rows="5" required></textarea>
+        </label>
+        <button type="submit"><i class="fa-solid fa-save"></i> Guardar</button>
+      </form>
+    </section>
+
+    <section class="historial">
+      <h2>Historial de Observaciones</h2>
+      <table>
+        <thead>
+          <tr><th>Estudiante</th><th>Curso</th><th>Observación</th><th>Fecha</th></tr>
+        </thead>
+        <tbody id="tablaObservaciones"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="../js/observaciones.js"></script>
+</body>
+</html>

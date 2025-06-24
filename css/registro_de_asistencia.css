@@ -1,0 +1,132 @@
+/* Estilos globales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Encabezado */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.logo {
+  height: 50px;
+}
+
+.cerrar-sesion {
+  background: #ff5252;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cerrar-sesion:hover {
+  background: #e53935;
+}
+
+/* Contenido principal */
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 30px;
+}
+
+/* Filtros */
+.filtros {
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filtros h2 {
+  margin-top: 0;
+}
+
+.filtros label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.filtros select,
+.filtros input[type="date"] {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+/* Tabla de asistencia */
+.tabla-asistencia {
+  flex: 2;
+  min-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tabla-asistencia h2 {
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: #e0e7ff;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+td select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+/* Botón guardar */
+.guardar-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.guardar-btn:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,103 @@
+/* Fuente y fondo base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  color: #2c3e50;
+}
+
+/* Cabecera */
+header {
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+header img {
+  height: 50px;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  margin-left: 20px;
+}
+
+/* Contenedor central */
+.contenedor {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+/* Títulos */
+h2 {
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+/* Acciones */
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.acciones button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.acciones button:hover {
+  background-color: #2980b9;
+}
+
+/* Tabla de entrevistas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #ecf0f1;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dcdcdc;
+  font-size: 0.95rem;
+}
+
+/* Íconos accesibilidad */
+.icono-accesibilidad {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  color: #34495e;
+  transition: color 0.2s;
+}
+
+.icono-accesibilidad:hover {
+  color: #2980b9;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.85em;
+  color: #999;
+}

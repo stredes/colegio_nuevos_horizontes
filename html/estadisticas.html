@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estadísticas Académicas</title>
+  <link rel="stylesheet" href="../css/estadisticas.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
+  <h1>Estadísticas Académicas</h1>
+  <a href="portal_profesor.html" class="btn-volver">← Volver al portal</a>
+</header>
+
+<main class="contenedor">
+  <section class="panel-estadisticas">
+    <h2>Resumen por Asignatura</h2>
+    <canvas id="graficoNotas" width="400" height="200"></canvas>
+  </section>
+
+  <section class="panel-detalle">
+    <h3>Detalles adicionales</h3>
+    <ul>
+      <li>Asignatura con mejor promedio: <strong>Lenguaje</strong></li>
+      <li>Asignatura con menor asistencia: <strong>Matemáticas</strong></li>
+      <li>Estudiantes con rendimiento destacado: <strong>3</strong></li>
+    </ul>
+  </section>
+</main>
+
+<script src="../js/estadisticas.js"></script>
+</body>
+</html>

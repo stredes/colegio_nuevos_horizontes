@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de Asistencia</title>
+  <link rel="stylesheet" href="../css/registro_de_asistencia.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header class="encabezado">
+  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
+  <h1>Registro de Asistencia</h1>
+  <button class="cerrar-sesion"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+</header>
+
+<main class="contenedor">
+  <section class="tabla-asistencia">
+    <h2><i class="fa-solid fa-calendar-check"></i> Lista de Alumnos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Estudiante</th>
+          <th>Curso</th>
+          <th>Estado</th>
+          <th>Audio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nicolás Lagos</td>
+          <td>4°A</td>
+          <td>
+            <select>
+              <option>Presente</option>
+              <option>Atrasado</option>
+              <option>Ausente</option>
+              <option>Justificado</option>
+            </select>
+          </td>
+          <td><i class="fa-solid fa-volume-high icono-voz"></i></td>
+        </tr>
+        <tr>
+          <td>Camila Soto</td>
+          <td>4°A</td>
+          <td>
+            <select>
+              <option>Presente</option>
+              <option>Atrasado</option>
+              <option>Ausente</option>
+              <option>Justificado</option>
+            </select>
+          </td>
+          <td><i class="fa-solid fa-volume-high icono-voz"></i></td>
+        </tr>
+        <tr>
+          <td>Gian Lucas</td>
+          <td>4°A</td>
+          <td>
+            <select>
+              <option>Presente</option>
+              <option>Atrasado</option>
+              <option>Ausente</option>
+              <option>Justificado</option>
+            </select>
+          </td>
+          <td><i class="fa-solid fa-volume-high icono-voz"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="guardar-asistencia"><i class="fa-solid fa-floppy-disk"></i> Guardar Asistencia</button>
+  </section>
+</main>
+
+<script src="../js/registro_de_asistencia.js"></script>
+</body>
+</html>
