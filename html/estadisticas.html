@@ -6,6 +6,45 @@
   <title>Estadísticas Académicas</title>
   <link rel="stylesheet" href="../css/estadisticas.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .tabla-estudiantes {
+      margin-top: 30px;
+    }
+    .tabla-estudiantes h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    .tabla-estudiantes table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .tabla-estudiantes th, .tabla-estudiantes td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    .tabla-estudiantes th {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+    }
+    .tabla-estudiantes td {
+      background-color: #f8f9fa;
+    }
+    .tabla-estudiantes tbody tr:nth-child(even) td {
+      background-color: #e9ecef;
+    }
+    .asistencia-alta {
+      color: #28a745;
+      font-weight: bold;
+    }
+    .asistencia-baja {
+      color: #dc3545;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,16 +56,36 @@
 
 <main class="contenedor">
   <section class="panel-estadisticas">
-    <h2>Resumen por Asignatura</h2>
+    <h2><i class="fa-solid fa-chart-bar"></i> Resumen por Asignatura</h2>
     <canvas id="graficoNotas" width="400" height="200"></canvas>
   </section>
 
+  <section class="tabla-estudiantes">
+    <h2><i class="fa-solid fa-user-graduate"></i> Rendimiento por Estudiante</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Estudiante</th>
+          <th>Promedio General</th>
+          <th>Asistencia</th>
+          <th>Mejor Asignatura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Nicolás Lagos</td><td>6.2</td><td class="asistencia-alta">95%</td><td>Historia</td></tr>
+        <tr><td>Camila Soto</td><td>5.8</td><td class="asistencia-alta">91%</td><td>Lenguaje</td></tr>
+        <tr><td>Gian Lucas</td><td>6.5</td><td class="asistencia-alta">98%</td><td>Matemáticas</td></tr>
+        <tr><td>Javiera Pardo</td><td>5.5</td><td class="asistencia-baja">84%</td><td>Ciencias</td></tr>
+      </tbody>
+    </table>
+  </section>
+
   <section class="panel-detalle">
-    <h3>Detalles adicionales</h3>
+    <h3><i class="fa-solid fa-circle-info"></i> Resumen del Curso</h3>
     <ul>
-      <li>Asignatura con mejor promedio: <strong>Lenguaje</strong></li>
-      <li>Asignatura con menor asistencia: <strong>Matemáticas</strong></li>
-      <li>Estudiantes con rendimiento destacado: <strong>3</strong></li>
+      <li>Asignatura con mejor promedio general: <strong>Lenguaje</strong></li>
+      <li>Asignatura con menor asistencia general: <strong>Matemáticas</strong></li>
+      <li>Estudiantes con rendimiento destacado (Promedio > 6.0): <strong>2</strong></li>
     </ul>
   </section>
 </main>
