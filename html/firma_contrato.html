@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Firma de Contrato</title>
+  <link rel="stylesheet" href="../css/firma_contrato.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header>
+  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
+  <h1>Contrato de Prestación de Servicios</h1>
+</header>
+
+<main class="register-container">
+  <section class="register-box">
+    <h2><i class="fa-solid fa-file-signature"></i> Firma Electrónica</h2>
+
+    <form id="contratoForm" novalidate>
+      <div class="contrato-texto">
+        <p>
+          Por medio del presente documento, el apoderado o estudiante declara haber leído y aceptado los términos del contrato de prestación de servicios educativos correspondiente al año académico 2025.
+        </p>
+        <p>
+          Este contrato regula las obligaciones académicas, económicas y normativas entre el Colegio Nuevos Horizontes y el estudiante.
+        </p>
+      </div>
+
+      <label>
+        <input type="checkbox" id="aceptar" required />
+        Acepto los términos del contrato de prestación de servicios.
+      </label>
+
+      <div class="firmante">
+        <label for="firmante">Nombre del Firmante</label>
+        <input type="text" id="firmante" placeholder="Ej: María González" required />
+      </div>
+
+      <button type="submit">
+        <i class="fa-solid fa-pen-nib"></i> Firmar Contrato
+      </button>
+
+      <p class="login-link">
+        <a href="portal_apoderado.html"><i class="fa-solid fa-arrow-left"></i> Volver al portal</a>
+      </p>
+    </form>
+  </section>
+</main>
+
+<script src="../js/firma_contrato.js"></script>
+</body>
+</html>

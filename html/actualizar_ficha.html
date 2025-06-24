@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Actualizar Ficha</title>
+  <link rel="stylesheet" href="../css/actualizar_ficha.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header>
+  <img src="../img/logo.png" alt="Logo Colegio" class="logo" />
+  <h1>Ficha del Estudiante</h1>
+</header>
+
+<main class="register-container">
+  <section class="register-box">
+    <h2><i class="fa-solid fa-user-pen"></i> Actualización de Datos</h2>
+
+    <form id="fichaForm" novalidate>
+      <label for="nombre">Nombre del Estudiante</label>
+      <input type="text" id="nombre" disabled value="Juan Pérez" />
+
+      <label for="direccion">Dirección</label>
+      <input type="text" id="direccion" placeholder="Ej: Av. Siempre Viva 123" required />
+
+      <label for="telefono">Teléfono</label>
+      <input type="text" id="telefono" placeholder="Ej: +56 9 1234 5678" required />
+
+      <label for="correo">Correo Electrónico</label>
+      <input type="email" id="correo" placeholder="correo@ejemplo.com" required />
+
+      <label for="apoderado">Nombre del Apoderado</label>
+      <input type="text" id="apoderado" placeholder="Ej: María González" required />
+
+      <label for="emergencia">Teléfono de Emergencia</label>
+      <input type="text" id="emergencia" placeholder="Ej: +56 9 8765 4321" required />
+
+      <button type="submit">
+        <i class="fa-solid fa-floppy-disk"></i> Guardar Cambios
+      </button>
+
+      <p class="login-link">
+        <a href="portal_estudiante.html"><i class="fa-solid fa-arrow-left"></i> Volver al portal</a>
+      </p>
+    </form>
+  </section>
+</main>
+
+<script src="../js/actualizar_ficha.js"></script>
+</body>
+</html>
