@@ -4,117 +4,292 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historial Académico - Estudiante</title>
-  <link rel="stylesheet" href="../css/portal_estudiante_style_fix.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Estilos embebidos según estándar visual -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eef2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #ffe68a;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 5px solid #ffe68a;
+      position: relative;
+    }
+
+    header .logo {
+      height: 60px;
+    }
+
+    header h1 {
+      margin: 0;
+      flex: 1;
+      text-align: center;
+      font-size: 1.8em;
+    }
+
+    .header-icons {
+      position: absolute;
+      top: 25px;
+      right: 170px;
+      display: flex;
+      gap: 15px;
+      font-size: 1.2em;
+    }
+
+    .header-icons i {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .header-icons i:hover {
+      color: #fff;
+    }
+
+    .boton-mokup {
+      background-color: #2c3e50;
+      color: #ffe68a;
+      border: 2px solid #ffe68a;
+      padding: 8px 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.95em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .boton-mokup:hover {
+      background-color: #ffe68a;
+      color: #2c3e50;
+      border-color: #2c3e50;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 20px;
+      max-width: 960px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .contenedor {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .perfil-apoderado {
+      background-color: #f8fafd;
+      border: 1px solid #e0e6ec;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .perfil-apoderado img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffe68a;
+      margin-bottom: 10px;
+    }
+
+    .perfil-apoderado p {
+      margin: 5px 0;
+      color: #4a657e;
+    }
+
+    .perfil-apoderado strong {
+      font-size: 1.1em;
+      color: #2c3e50;
+    }
+
+    .info-alumno {
+      background-color: #f8fafd;
+      border: 1px solid #e0e6ec;
+      padding: 25px;
+      border-radius: 8px;
+      flex: 2;
+      min-width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .info-alumno h2 {
+      font-size: 1.5em;
+      margin-top: 0;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tabla-cuadriculada {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: white;
+    }
+
+    .tabla-cuadriculada th,
+    .tabla-cuadriculada td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .tabla-cuadriculada th {
+      background-color: #2c3e50;
+      color: #ffe68a;
+    }
+
+    .panel-avisos {
+      margin-top: 30px;
+      background-color: #f8fafd;
+      border: 1px solid #e0e6ec;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .panel-avisos h3 {
+      color: #2c3e50;
+      margin-top: 0;
+      border-bottom: 2px solid #e0e6ec;
+      padding-bottom: 10px;
+    }
+
+    .panel-avisos ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    .panel-avisos li::before {
+      content: '\f0da';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: #27ae60;
+      margin-right: 8px;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .acciones .boton-mokup {
+      position: static;
+    }
+
+    @media (max-width: 768px) {
+      .contenedor {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
-  <h1>Historial académico</h1>
+  <h1>Historial Académico</h1>
 
-  <!-- Íconos adicionales cabecera -->
-  <div style="position:absolute; top:20px; right:200px;">
+  <div class="header-icons">
     <i class="fa-solid fa-print" title="Imprimir"></i>
     <i class="fa-solid fa-magnifying-glass" title="Buscar"></i>
     <i class="fa-solid fa-house" title="Inicio"></i>
     <i class="fa-solid fa-gear" title="Configuración"></i>
   </div>
 
-  <button class="boton-mokup" style="position:absolute; top:20px; right:20px;">
+  <button class="boton-mokup">
     <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
   </button>
 </header>
 
-<section class="contenedor" style="display: flex; gap: 20px;">
-  <!-- Filtro de curso -->
-  <div>
-    <button class="boton-audio" title="Audio Curso">
-      <i class="fa-solid fa-volume-high"></i>
-    </button>
-    <label for="selectCurso">Curso</label>
-    <select id="selectCurso">
-      <option>4MEDIO A</option>
-      <option>4MEDIO B</option>
-    </select>
-  </div>
-
-  <!-- Tabla principal -->
-  <div style="flex: 1 1 60%; min-width: 600px;">
-    <h2 class="table-title">Asignaturas x semestre</h2>
-    <div style="overflow-x: auto;">
-      <table class="tabla-cuadriculada">
-        <thead>
-          <tr>
-            <th><i class="fa-solid fa-chevron-down"></i> asignaturas</th>
-            <th><i class="fa-solid fa-chevron-down"></i> semestre 1</th>
-            <th><i class="fa-solid fa-chevron-down"></i> semestre 2</th>
-            <th><i class="fa-solid fa-chevron-down"></i> promedio</th>
-            <th><i class="fa-solid fa-chevron-down"></i> asistencia</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Matemáticas</td><td>4.0</td><td>5.0</td><td>4.5</td><td>85%</td></tr>
-          <tr><td>Lenguaje</td><td>6.0</td><td>4.2</td><td>5.1</td><td>92%</td></tr>
-          <tr><td>Inglés</td><td>5.0</td><td>4.0</td><td>4.5</td><td>95%</td></tr>
-          <tr><td>Ed Física</td><td>7.0</td><td>7.0</td><td>7.0</td><td>98%</td></tr>
-          <tr><td>Religión</td><td>MB</td><td>MB</td><td>MB</td><td>100%</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Resumen curso -->
-    <div class="resumen" style="margin-top: 10px;">
-      <button class="boton-audio" title="Escuchar contenido">
-        <i class="fa-solid fa-volume-high"></i>
-      </button>
-      <i class="fa-solid fa-bell icono-campana"></i> <strong>Resumen curso</strong>
-      <ul>
-        <li>Solicitud de cambio de sala de curso por inundación.</li>
-        <li>Recordatorio: Renovación TNE pendiente.</li>
-        <li>Fotografías para el anuario se tomarán el 02/06/2026.</li>
-      </ul>
-    </div>
-
-    <!-- Generar PDF -->
-    <div style="margin-top: 15px;">
-      <button class="boton-mokup">
-        <i class="fa-solid fa-file-pdf"></i> Generar reporte PDF
+<main>
+  <section class="contenedor">
+    <div class="perfil-apoderado">
+      <img src="../img/estudiante.png" alt="Estudiante">
+      <p><strong>ELMA ROMAS</strong></p>
+      <p>Curso: 4° Medio A</p>
+      <p>RUT: 23.355.565-9</p>
+      <button class="boton-audio" title="Audio estudiante">
         <i class="fa-solid fa-volume-high"></i>
       </button>
     </div>
 
-    <!-- Botón para Rendir Exámenes -->
-    <div style="margin-top: 20px; text-align: center;">
-      <a href="seleccion_examen.html" class="boton-mokup" style="background-color: #d9534f; border-color: #d43f3a; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
-        <i class="fa-solid fa-file-alt"></i> Rendir Exámenes
-      </a>
+    <div class="info-alumno">
+      <h2><i class="fa-solid fa-book"></i> Notas por Asignatura</h2>
+      <div style="overflow-x:auto;">
+        <table class="tabla-cuadriculada">
+          <thead>
+            <tr>
+              <th>Asignatura</th>
+              <th>Sem. 1</th>
+              <th>Sem. 2</th>
+              <th>Promedio</th>
+              <th>Asistencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Matemáticas</td><td>4.0</td><td>5.0</td><td>4.5</td><td>85%</td></tr>
+            <tr><td>Lenguaje</td><td>6.0</td><td>4.2</td><td>5.1</td><td>92%</td></tr>
+            <tr><td>Inglés</td><td>5.0</td><td>4.0</td><td>4.5</td><td>95%</td></tr>
+            <tr><td>Ed. Física</td><td>7.0</td><td>7.0</td><td>7.0</td><td>98%</td></tr>
+            <tr><td>Religión</td><td>MB</td><td>MB</td><td>MB</td><td>100%</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Panel del estudiante -->
-  <div class="perfil-estudiante">
-    <img src="../img/estudiante.png" alt="Estudiante" />
-    <p><strong>ELMA ROMAS</strong></p>
-    <p>233555659-5</p>
-    <p>Estudiante</p>
-    <p><strong>Curso: 4MEDIO A</strong></p>
-    <button class="boton-audio" title="Escuchar contenido">
-      <i class="fa-solid fa-volume-high icono-audio"></i>
-    </button>
-  </div>
-</section>
+  <section class="panel-avisos">
+    <h3><i class="fa-solid fa-bell"></i> Avisos Importantes</h3>
+    <ul>
+      <li>Certificado de notas disponible en Secretaría</li>
+      <li>Próxima reunión: 15 de julio</li>
+      <li>Entrega de informes semestrales: 10 de julio</li>
+    </ul>
+  </section>
 
-<!-- Botones inferiores -->
-<section class="botones" style="margin-top: 30px;">
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Asignatura</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Alumno</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Semestre 1</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Semestre 2</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Promedio</a>
-  <a class="boton-mokup" href="#"><i class="fa-solid fa-volume-high"></i> Notificaciones</a>
-</section>
+  <section class="acciones">
+    <button class="boton-mokup"><i class="fa-solid fa-file-pdf"></i> Descargar PDF</button>
+    <a href="asistencia.html" class="boton-mokup"><i class="fa-solid fa-user-check"></i> Ver asistencia</a>
+    <a href="observaciones.html" class="boton-mokup"><i class="fa-solid fa-eye"></i> Ver observaciones</a>
+    <a href="inicio_sesion.html" class="boton-mokup"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+  </section>
+</main>
 
 </body>
 </html>
- 
