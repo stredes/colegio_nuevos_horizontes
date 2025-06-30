@@ -1,4 +1,4 @@
-/* Fondo general */
+/* Estilos generales para el cuerpo de la página */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -8,14 +8,14 @@ body {
   background-attachment: fixed;
 }
 
-/* Encabezado con logo y título */
+/* Estilos para el encabezado */
 header {
   background-color: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border-bottom: 3px solid #ffe600;
+  border-bottom: 3px solid #ffe600; /* Línea decorativa amarilla */
 }
 
 header .logo {
@@ -29,7 +29,7 @@ header h1 {
   margin: 0;
 }
 
-/* Contenedor de login */
+/* Contenedor principal del formulario de login */
 .login-container {
   display: flex;
   justify-content: center;
@@ -37,13 +37,14 @@ header h1 {
   padding: 60px 20px;
 }
 
+/* Caja del formulario de login */
 .login-box {
   background-color: rgba(255, 255, 255, 0.96);
   border-radius: 12px;
   padding: 30px 40px;
   max-width: 400px;
   width: 100%;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15); /* Sombra sutil */
   text-align: center;
 }
 
@@ -68,9 +69,10 @@ header h1 {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
+/* Estilos para el botón de Iniciar Sesión */
 .login-box button {
   background-color: #ffe600;
   color: #000;
@@ -86,15 +88,16 @@ header h1 {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease; /* Transición suave al pasar el ratón */
 }
 
 .login-box button:hover {
   background-color: #ffdd00;
 }
 
+/* Estilos para el botón de Registrarse */
 .login-box .btn-register {
-  background-color: #6c757d; /* Un color secundario para diferenciar */
+  background-color: #6c757d; /* Color secundario para diferenciar */
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -116,3 +119,5 @@ header h1 {
 .login-box .btn-register:hover {
   background-color: #5a6268;
 }
+
+

@@ -1,7 +1,7 @@
 /* Estilos generales para el body y main para consistencia con otras páginas */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font for a modern look */
+    background-color: #eef2f5; /* Lighter background */
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,31 +12,325 @@ body {
 main {
     flex-grow: 1;
     padding: 20px;
-    max-width: 1000px; /* Ajusta este valor según el diseño deseado */
+    max-width: 960px; /* Adjusted max-width */
     margin: 20px auto;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Stronger shadow */
 }
 
-/* Aquí irían los estilos existentes de portal_apoderado.css */
-/* Por ejemplo: */
-/*
+/* Header styles */
 header {
-    background-color: #2c3e50;
-    color: rgb(255, 236, 130);
+    background-color: #2c3e50; /* Dark blue/charcoal */
+    color: #ffe68a; /* Yellowish color for text and icons */
     padding: 15px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative; /* For absolute positioning of internal elements */
+    border-bottom: 5px solid #ffe68a; /* Yellow bottom border */
 }
 
-.logo {
-    height: 50px;
+header .logo {
+    height: 60px; /* Larger logo */
     width: auto;
+    margin-right: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em; /* Slightly larger title */
+    flex-grow: 1; /* Allows title to take available space */
+    text-align: center; /* Center the title */
+}
+
+header .header-icons {
+    position: absolute;
+    top: 25px; /* Adjust as needed */
+    right: 170px; /* Space for the logout button */
+    display: flex;
+    gap: 15px; /* Space between icons */
+    font-size: 1.2em;
+}
+
+header .header-icons i {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+header .header-icons i:hover {
+    color: #fff; /* White on hover */
 }
 
 .boton-mokup {
-    // ... tus estilos de botón existentes
+    background-color: #2c3e50; /* Dark blue/charcoal */
+    color: #ffe68a; /* Yellowish color */
+    border: 2px solid #ffe68a; /* Yellow border */
+    padding: 10px 20px;
+    border-radius: 25px; /* Pill-shaped buttons */
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none; /* For anchor tags */
 }
-*/
+
+.boton-mokup:hover {
+    background-color: #ffe68a; /* Yellow background on hover */
+    color: #2c3e50; /* Dark text on hover */
+    border-color: #2c3e50;
+}
+
+/* Specific style for header button to override position */
+header .boton-mokup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 15px; /* Slightly smaller for header */
+    font-size: 0.95em;
+}
+
+/* Main content sections */
+main .contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* More space between sections */
+    margin-bottom: 30px;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.info-alumno, .perfil-apoderado {
+    background-color: #f8fafd; /* Light background for sections */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #e0e6ec; /* Subtle border */
+}
+
+.info-alumno {
+    flex: 2; /* Takes more space */
+    min-width: 350px;
+}
+
+.perfil-apoderado {
+    flex: 1; /* Takes less space */
+    text-align: center;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-alumno h2, .panel-info h3, .panel-pendientes h3, .panel-avisos h3 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-alumno p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #4a657e;
+}
+
+.info-alumno strong {
+    color: #34495e;
+}
+
+.perfil-apoderado img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ffe68a; /* Yellow border around image */
+}
+
+.perfil-apoderado p {
+    margin: 5px 0;
+    color: #4a657e;
+}
+
+.perfil-apoderado strong {
+    font-size: 1.1em;
+    color: #2c3e50;
+}
+
+.perfil-apoderado p:nth-of-type(2) { /* "Apoderado de: ELMA ROMAS" */
+    color: #27ae60; /* Green color for relationship */
+    font-weight: bold;
+}
+
+.boton-audio {
+    background-color: #27ae60; /* Green color for audio button */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%; /* Circular button */
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.boton-audio:hover {
+    background-color: #229954;
+}
+
+/* Panels section */
+.paneles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px; /* Space between panels */
+    margin-bottom: 30px;
+}
+
+.panel-info, .panel-pendientes, .panel-avisos {
+    background-color: #f8fafd; /* Light background */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #e0e6ec;
+}
+
+.paneles h3 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e6ec; /* Separator under title */
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.paneles ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.paneles li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #4a657e;
+    display: flex;
+    align-items: center;
+}
+
+.paneles li:last-child {
+    margin-bottom: 0;
+}
+
+/* Specific icon for list items */
+.paneles li::before {
+    content: '\f0da'; /* FontAwesome right arrow */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #27ae60; /* Green arrow */
+    margin-right: 8px;
+}
+
+/* Actions buttons section */
+.acciones {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    margin-top: 30px;
+}
+
+/* Font Awesome icon styling within elements */
+.fa-solid {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Specific colors for "Inasistencia" from PDF - adjusted for HTML structure */
+.info-alumno .inasistencia {
+    color: #e74c3c; /* Red color for inasistencia */
+    font-weight: bold;
+}
+
+.info-alumno .asistencia {
+    color: #27ae60; /* Green color for asistencia */
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 70px; /* Give space for positioned elements */
+    }
+
+    header h1 {
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    header .header-icons {
+        top: unset;
+        bottom: 15px;
+        right: 20px;
+        left: 20px;
+        justify-content: space-around;
+        width: auto;
+    }
+
+    header .boton-mokup {
+        top: 15px;
+        right: 15px;
+    }
+
+    main .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-alumno, .perfil-apoderado {
+        width: 100%;
+        max-width: 450px; /* Limit width on smaller screens */
+    }
+
+    .paneles {
+        grid-template-columns: 1fr; /* Stack panels vertically */
+    }
+
+    .acciones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acciones .boton-mokup {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .info-alumno, .perfil-apoderado,
+    .panel-info, .panel-pendientes, .panel-avisos {
+        padding: 15px;
+    }
+
+    .boton-mokup {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+
