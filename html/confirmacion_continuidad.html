@@ -46,26 +46,26 @@
   </footer>
 
   <script>
-    // Verifica si hay sesión activa
-    const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
-    if (!usuario) {
-      alert("Debes iniciar sesión primero.");
+    // Verifica si hay sesión activa y si el rol es de alumno
+    const usuario = sessionStorage.getItem("usuario");
+    const rol = sessionStorage.getItem("rol");
+
+    if (!usuario || rol !== 'apoderado') {
+      alert("Debes iniciar sesión como estudiante para acceder a esta página.");
       window.location.href = "inicio_sesion.html";
     } else {
       // Cargar el nombre del estudiante
-      if (usuario.estudiante) {
-        document.getElementById("nombre").value = usuario.estudiante;
-      } else {
-        document.getElementById("nombre").value = usuario.nombre || "Estudiante";
-      }
+      // sessionStorage guarda el nombre de usuario, lo capitalizamos para mostrarlo.
+      const nombreMostrado = usuario.charAt(0).toUpperCase() + usuario.slice(1);
+      document.getElementById("nombre").value = nombreMostrado;
     }
 
-    // Guardar la confirmación en localStorage
+    // Guardar la confirmación
     document.getElementById("continuidadForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      usuario.continuidadConfirmada = true;
-      localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
-      alert("¡Gracias por confirmar tu continuidad para el año 2025!");
+      // Guardamos la confirmación asociada al usuario en sessionStorage
+      sessionStorage.setItem(`continuidad_${usuario}`, 'true');
+      alert(`¡Gracias, ${document.getElementById("nombre").value}, por confirmar tu continuidad para el año 2025!`);
       window.location.href = "portal_estudiante.html";
     });
   </script>

@@ -53,29 +53,38 @@
 </footer>
 
 <script>
-  const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
-  if (!usuario) {
-    alert("Debes iniciar sesión.");
+  // 1. Obtener el usuario de la sesión actual (consistente con el login)
+  const usuarioLogueado = sessionStorage.getItem("usuario");
+  const rol = sessionStorage.getItem("rol");
+
+  // 2. Verificar que haya una sesión activa de estudiante
+  if (!usuarioLogueado || (rol !== 'alumno' && rol !== 'apoderado')) {
+    alert("Debes iniciar sesión como estudiante o apoderado para acceder a esta página.");
     window.location.href = "inicio_sesion.html";
   } else {
-    document.getElementById("nombre").value = usuario.estudiante || usuario.nombre || "";
-    document.getElementById("direccion").value = usuario.direccion || "";
-    document.getElementById("telefono").value = usuario.telefono || "";
-    document.getElementById("correo").value = usuario.correo || "";
-    document.getElementById("apoderado").value = usuario.apoderado || "";
-    document.getElementById("emergencia").value = usuario.emergencia || "";
+    // 3. Cargar los datos del usuario desde sessionStorage
+    // El nombre viene del login, lo capitalizamos para mostrarlo.
+    const nombreMostrado = usuarioLogueado.charAt(0).toUpperCase() + usuarioLogueado.slice(1);
+    document.getElementById("nombre").value = nombreMostrado;
+
+    // Los otros datos los buscamos por separado, asociados al usuario
+    document.getElementById("direccion").value = sessionStorage.getItem(`direccion_${usuarioLogueado}`) || "";
+    document.getElementById("telefono").value = sessionStorage.getItem(`telefono_${usuarioLogueado}`) || "";
+    document.getElementById("correo").value = sessionStorage.getItem(`correo_${usuarioLogueado}`) || "";
+    document.getElementById("apoderado").value = sessionStorage.getItem(`apoderado_${usuarioLogueado}`) || "";
+    document.getElementById("emergencia").value = sessionStorage.getItem(`emergencia_${usuarioLogueado}`) || "";
   }
 
+  // 4. Guardar los cambios en sessionStorage
   document.getElementById("fichaForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    usuario.direccion = document.getElementById("direccion").value;
-    usuario.telefono = document.getElementById("telefono").value;
-    usuario.correo = document.getElementById("correo").value;
-    usuario.apoderado = document.getElementById("apoderado").value;
-    usuario.emergencia = document.getElementById("emergencia").value;
-
-    localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+    // Guardamos cada campo asociado al nombre de usuario
+    sessionStorage.setItem(`direccion_${usuarioLogueado}`, document.getElementById("direccion").value);
+    sessionStorage.setItem(`telefono_${usuarioLogueado}`, document.getElementById("telefono").value);
+    sessionStorage.setItem(`correo_${usuarioLogueado}`, document.getElementById("correo").value);
+    sessionStorage.setItem(`apoderado_${usuarioLogueado}`, document.getElementById("apoderado").value);
+    sessionStorage.setItem(`emergencia_${usuarioLogueado}`, document.getElementById("emergencia").value);
 
     alert("✅ Ficha actualizada correctamente.");
     window.location.href = "portal_estudiante.html";
