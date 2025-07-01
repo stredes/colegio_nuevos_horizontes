@@ -1,6 +1,11 @@
 body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
+      /* --- Estilos para el fondo --- */
+      /* Ruta a tu imagen. Usamos ../ para "subir" un nivel desde la carpeta css a la raíz y luego entrar a img */
+      background-image: url('../img/background.png');
+      background-size: cover; /* La imagen cubre todo el espacio */
+      background-attachment: fixed; /* La imagen no se mueve con el scroll */
+      background-position: center; /* La imagen está centrada */
       margin: 0;
       padding: 0;
     }
@@ -25,8 +30,11 @@ body {
 
     main {
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 40px auto; /* Centra el contenido */
+      padding: 30px; /* Añade espaciado interno */
+      background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con 70% de opacidad para legibilidad */
+      border-radius: 8px; /* Bordes redondeados para un look más suave */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el contenido */
     }
 
     h2 {
@@ -66,4 +74,3 @@ body {
       font-size: 0.9em;
       color: #666;
     }
-
