@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagar Matrícula</title>
+  <link rel="stylesheet" href="../css/pagar_matricula.css" />
+</head>
+<body>
+  <header>
+    <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
+    <h1>Pagar Matrícula 2025</h1>
+    <a href="portal_apoderado.html" class="boton-mokup">Volver al portal</a>
+  </header>
+  <main>
+    <section class="pago-section">
+      <h2>Formulario de Pago</h2>
+      <form id="form-pago">
+        <label for="nombre">Nombre del Apoderado</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label for="rut">RUT</label>
+        <input type="text" id="rut" name="rut" required />
+        <label for="monto">Monto a Pagar</label>
+        <input type="number" id="monto" name="monto" value="120000" readonly />
+        <label for="metodo">Método de Pago</label>
+        <select id="metodo" name="metodo" required>
+          <option value="">Seleccione...</option>
+          <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+          <option value="transferencia">Transferencia Bancaria</option>
+        </select>
+        <button type="submit" class="boton-mokup">Pagar Matrícula</button>
+      </form>
+      <div id="mensaje-pago" class="mensaje-pago"></div>
+    </section>
+  </main>
+  <script src="../js/pagar_matricula.js"></script>
+</body>
+</html> 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración</title>
+  <link rel="stylesheet" href="../css/portal_admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
+    <h1>Panel de Administración</h1>
+    <button class="boton-mokup" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+  </header>
+  <main>
+    <section class="admin-dashboard">
+      <h2><i class="fa-solid fa-gauge"></i> Dashboard</h2>
+      <div class="admin-panels">
+        <div class="panel">
+          <i class="fa-solid fa-users"></i>
+          <h3>Usuarios Registrados</h3>
+          <p id="usuarios-count">-</p>
+        </div>
+        <div class="panel">
+          <i class="fa-solid fa-user-graduate"></i>
+          <h3>Estudiantes</h3>
+          <p id="estudiantes-count">-</p>
+        </div>
+        <div class="panel">
+          <i class="fa-solid fa-chalkboard-teacher"></i>
+          <h3>Profesores</h3>
+          <p id="profesores-count">-</p>
+        </div>
+        <div class="panel">
+          <i class="fa-solid fa-user-tie"></i>
+          <h3>Apoderados</h3>
+          <p id="apoderados-count">-</p>
+        </div>
+      </div>
+      <div class="admin-actions">
+        <button class="boton-mokup"><i class="fa-solid fa-user-plus"></i> Registrar Usuario</button>
+        <button class="boton-mokup"><i class="fa-solid fa-database"></i> Exportar Datos</button>
+        <button class="boton-mokup" id="btnCalendario" onclick="window.location.href='calendario.html';"><i class="fa-solid fa-calendar-days"></i> Calendario</button>
+      </div>
+    </section>
+    <section id="calendario-section" class="calendario-section" style="display:none; margin-top:30px;">
+      <h2><i class="fa-solid fa-calendar-days"></i> Calendario Escolar</h2>
+      <div class="calendario-config">
+        <form id="form-fecha-importante">
+          <label>Fecha importante o feriado:</label>
+          <input type="date" id="fechaImportante" required />
+          <input type="text" id="descripcionFecha" placeholder="Descripción (ej: Feriado Nacional)" required />
+          <button type="submit" class="boton-mokup"><i class="fa-solid fa-plus"></i> Agregar</button>
+        </form>
+        <ul id="lista-fechas-importantes" class="lista-fechas"></ul>
+      </div>
+    </section>
+  </main>
+  <script src="../js/portal_admin.js"></script>
+</body>
+</html> 

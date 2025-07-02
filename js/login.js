@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       elma: { rol: "alumno", ruta: "portal_estudiante.html" },
       carlos: { rol: "profesor", ruta: "portal_profesor.html" },
       maria: { rol: "apoderado", ruta: "portal_apoderado.html" },
-      admin: { rol: "administrativo", ruta: "panel_admin.html" } // ejemplo extra opcional
+      admin: { rol: "administrativo", ruta: "portal_admin.html" } // ejemplo extra opcional
     };
 
     // Contraseña unificada a "123"

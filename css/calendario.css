@@ -1,0 +1,169 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f5;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #2c3e50;
+  color: #ffe68a;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 5px solid #ffe68a;
+}
+header .logo {
+  height: 50px;
+  width: auto;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+  flex-grow: 1;
+  text-align: center;
+}
+.boton-mokup {
+  background-color: #2c3e50;
+  color: #ffe68a;
+  border: 2px solid #ffe68a;
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.95em;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.boton-mokup:hover {
+  background-color: #ffe68a;
+  color: #2c3e50;
+  border-color: #2c3e50;
+}
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 30px 25px;
+}
+.calendario-img-section {
+  text-align: center;
+}
+.calendario-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+.leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.leyenda div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1em;
+}
+.color {
+  display: inline-block;
+  width: 28px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+}
+.semana-cero { background: #bcd2e8; }
+.preparacion { background: #b6e7c9; }
+.clases { background: #ffe68a; }
+.cierre { background: #e6e6e6; }
+.inscripcion { background: #7be495; }
+.examenes { background: #ffb3b3; }
+.encuesta { background: #e1b6e7; }
+.receso { background: #e7b6b6; }
+.feriados-section {
+  background: #f8fafd;
+  border: 1px solid #e0e6ec;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 25px 20px;
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.feriados-section h2 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#form-feriado {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#form-feriado input[type="date"],
+#form-feriado input[type="text"] {
+  padding: 8px;
+  border: 1px solid #e0e6ec;
+  border-radius: 5px;
+  font-size: 1em;
+}
+#form-feriado button {
+  padding: 8px 15px;
+  font-size: 1em;
+}
+.lista-feriados {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.lista-feriados li {
+  background: #fff;
+  border: 1px solid #e0e6ec;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #34495e;
+  font-size: 1em;
+}
+.lista-feriados li .fecha-label {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-right: 10px;
+}
+.lista-feriados li .eliminar-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.95em;
+  margin-left: 10px;
+  transition: background 0.2s;
+}
+.lista-feriados li .eliminar-btn:hover {
+  background: #c0392b;
+}
+@media (max-width: 700px) {
+  main {
+    padding: 15px 5px;
+  }
+  .leyenda {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} 

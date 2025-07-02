@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendario Académico 2025</title>
+  <link rel="stylesheet" href="../css/calendario.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <img src="../img/logo.png" alt="Colegio Nuevos Horizontes" class="logo" />
+    <h1>Calendario Académico 2025</h1>
+    <a href="portal_admin.html" class="boton-mokup"><i class="fa-solid fa-arrow-left"></i> Volver al panel</a>
+  </header>
+  <main>
+    <section class="calendario-img-section">
+      <img src="../img/calendario_2025.png" alt="Calendario Académico 2025" class="calendario-img" />
+      <div class="leyenda">
+        <div><span class="color semana-cero"></span> Semana Cero</div>
+        <div><span class="color preparacion"></span> Preparación Académica</div>
+        <div><span class="color clases"></span> Período de Clases</div>
+        <div><span class="color cierre"></span> Cierre Semestre</div>
+        <div><span class="color inscripcion"></span> Inscripción de Asignaturas</div>
+        <div><span class="color examenes"></span> Período Exámenes</div>
+        <div><span class="color encuesta"></span> Encuesta Docente</div>
+        <div><span class="color receso"></span> Receso Académico</div>
+      </div>
+    </section>
+    <section class="feriados-section">
+      <h2><i class="fa-solid fa-calendar-plus"></i> Configurar Feriados</h2>
+      <form id="form-feriado">
+        <input type="date" id="fechaFeriado" required />
+        <input type="text" id="descFeriado" placeholder="Descripción del feriado" required />
+        <button type="submit" class="boton-mokup"><i class="fa-solid fa-plus"></i> Agregar</button>
+      </form>
+      <ul id="lista-feriados" class="lista-feriados"></ul>
+    </section>
+  </main>
+  <script src="../js/calendario.js"></script>
+</body>
+</html> 
