@@ -1,43 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const formulario = document.getElementById("form-observacion");
-  const tabla = document.querySelector("#tablaObservaciones tbody");
-  const observaciones = [];
+  // Obtener datos del hijo del apoderado
+  const usuarioActivo = JSON.parse(localStorage.getItem("usuario_activo"));
+  const nombreHijo = usuarioActivo?.estudiante || "";
+  const cursoHijo = usuarioActivo?.curso || "";
 
-  formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
+  // Simulación de observaciones almacenadas (esto debería venir de un backend o localStorage real)
+  const observaciones = JSON.parse(localStorage.getItem("observaciones_academicas") || "[]");
 
-    // Obtener los valores del formulario
-    const estudiante = document.getElementById("estudiante").value.trim();
-    const observacion = document.getElementById("texto-observacion").value.trim();
+  // Filtrar solo las del hijo
+  const observacionesHijo = observaciones.filter(obs => obs.estudiante === nombreHijo && obs.curso === cursoHijo);
 
-    if (estudiante === "" || observacion === "") {
-      alert("Por favor, completa todos los campos.");
-      return;
-    }
-
-    // Crear objeto y guardarlo
-    const nuevaObs = {
-      fecha: new Date().toLocaleDateString(),
-      estudiante,
-      observacion
-    };
-
-    observaciones.push(nuevaObs);
-    agregarFila(nuevaObs);
-
-    // Limpiar formulario
-    formulario.reset();
-  });
-
-  function agregarFila(obs) {
+  const tabla = document.getElementById("tablaObservaciones");
+  tabla.innerHTML = "";
+  observacionesHijo.forEach(obs => {
     const fila = document.createElement("tr");
-
     fila.innerHTML = `
-      <td>${obs.fecha}</td>
       <td>${obs.estudiante}</td>
-      <td>${obs.observacion}</td>
+      <td>${obs.curso}</td>
+      <td>${obs.detalle}</td>
+      <td>${obs.fecha}</td>
     `;
-
     tabla.appendChild(fila);
-  }
+  });
 });

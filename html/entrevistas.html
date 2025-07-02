@@ -110,9 +110,27 @@
 <div class="contenedor">
   <div class="acciones">
     <h2>Entrevistas Programadas</h2>
-    <button onclick="alert('Función para agendar nueva entrevista (por implementar)')">
+    <button id="btn-agendar" type="button">
       <i class="fa-solid fa-calendar-plus"></i> Agendar Nueva
     </button>
+  </div>
+
+  <!-- Modal para agendar nueva entrevista -->
+  <div id="modal-agendar" class="modal-oculto">
+    <div class="modal-contenido">
+      <h3>Agendar Nueva Entrevista</h3>
+      <form id="form-agendar">
+        <label>Fecha:<br><input type="date" id="fecha" required></label><br><br>
+        <label>Hora:<br><input type="time" id="hora" required></label><br><br>
+        <label>Estudiante:<br><input type="text" id="estudiante" required></label><br><br>
+        <label>Apoderado:<br><input type="text" id="apoderado" required></label><br><br>
+        <label>Motivo:<br><input type="text" id="motivo" required></label><br><br>
+        <div style="text-align:right;">
+          <button type="button" id="btn-cancelar">Cancelar</button>
+          <button type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <table>
@@ -126,7 +144,7 @@
         <th>Acciones</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tabla-entrevistas">
       <tr>
         <td>2025-06-26</td>
         <td>10:00</td>
@@ -166,5 +184,6 @@ function leerTextoCercano(icono) {
 }
 </script>
 
+<script src="../js/entrevistas.js"></script>
 </body>
 </html>

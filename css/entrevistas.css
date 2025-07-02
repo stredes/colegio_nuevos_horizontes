@@ -101,3 +101,80 @@ footer {
   font-size: 0.85em;
   color: #999;
 }
+
+/* Modal para agendar entrevista */
+.modal-oculto {
+  display: none;
+}
+
+#modal-agendar {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44, 62, 80, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-agendar.modal-oculto {
+  display: none;
+}
+
+.modal-contenido {
+  background: #fff;
+  padding: 30px 25px 20px 25px;
+  border-radius: 10px;
+  min-width: 320px;
+  max-width: 95vw;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.18);
+  position: relative;
+}
+
+#form-agendar label {
+  display: block;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+#form-agendar input[type="text"],
+#form-agendar input[type="date"],
+#form-agendar input[type="time"] {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 3px;
+  font-size: 1rem;
+}
+
+#form-agendar button[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#form-agendar button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+#btn-cancelar {
+  background: #ccc;
+  color: #2c3e50;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#btn-cancelar:hover {
+  background: #b2bec3;
+}
